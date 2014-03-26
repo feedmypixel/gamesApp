@@ -1,0 +1,41 @@
+<h1>Login</h1>
+<form name="loginForm" ng-submit="submitForm( loginForm.$valid )"novalidate>
+    <fieldset>
+
+        <div class="form-section">
+            <label for="username">
+                <span class="required"></span>Username:
+                <input type="text"
+                       class="form-input"
+                       name="username"
+                       id="username"
+                       placeholder="Enter your username"
+                       required
+                       ng-model="formData.username"
+                       ng-blur="loginForm.username.blurred = true" />
+            </label>
+            <p ng-show="loginForm.username.$invalid && ( loginForm.username.blurred || form.submitted )">Please enter your username!</p>
+        </div>
+
+        <div class="form-section">
+            <label for="password">
+                <span class="required"></span>Password:
+                <input type="{{ passwordInputType }}"
+                       class="form-input"
+                       name="password"
+                       id="password"
+                       placeholder="Enter your password"
+                       required
+                       ng-model="formData.password"
+                       ng-blur="loginForm.password.blurred = true" />
+            </label>
+            <p ng-show="loginForm.password.$invalid && ( loginForm.password.blurred || form.submitted )">Please enter your password!</p>
+
+            <show-password password-input-type="passwordInputType"></show-password>
+        <div>
+
+        <input type="submit"
+               value="Submit"/>
+
+    </fieldset>
+</form>

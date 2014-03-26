@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="author" content=""/>
+    <meta name="copyright" content=""/>
+    <meta name="rating" content="general"/>
+    <meta name="distribution" content="global"/>
+    <meta http-equiv="imagetoolbar" content="no"/>
+    <title></title>
+</head>
+<body ng-app="gamesApp">
+
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+        </ul>
+    </nav>
+
+    <div ng-view></div>
+
+    <script type="text/javascript" src="/lib/bower-components/angular/angular.js"></script>
+    <script type="text/javascript" src="/lib/bower-components/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="/lib/bower-components/angular-route/angular-route.js"></script>
+
+    <script type="text/javascript" src="/webapp/gamesApp.js"></script>
+    <script type="text/javascript" src="/webapp/index/IndexController.js"></script>
+    <script type="text/javascript" src="/webapp/login/LoginController.js"></script>
+    <script type="text/javascript" src="/webapp/app/directive/ShowPasswordDirective.js"></script>
+
+    <script type="text/javascript" src="/webapp/register/RegisterController.js"></script>
+
+    <script type="text/javascript" src="/webapp/api/ApiService.js"></script>
+</body>
+</html>

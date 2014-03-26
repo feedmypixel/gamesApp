@@ -1,0 +1,23 @@
+{
+  "name": "api_test",
+  "version": "0.0.0",
+  "authors": [
+    "Ben Chidgey <ben@feedmypixel.com>"
+  ],
+  "description": "api test for Sony",
+  "main": "public/index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.15",
+    "angular-route": "~1.2.15",
+    "angular-mocks": "~1.2.15",
+    "angular-resource": "~1.2.15"
+  }
+}

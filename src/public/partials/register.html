@@ -1,0 +1,86 @@
+<h1>Register</h1>
+<form name="registerForm" ng-submit="submitForm( registerForm.$valid )" novalidate>
+    <fieldset>
+
+        <div class="form-section">
+            <label for="first-name">
+                <span class="required"></span>First Name:
+                <input type="text"
+                       class="form-input"
+                       name="first_name"
+                       id="first-name"
+                       placeholder="Enter your first name"
+                       required
+                       ng-model="formData.firstName"
+                       ng-blur="registerForm.first_name.blurred = true"/>
+            </label>
+        </div>
+
+        <div class="form-section">
+            <label for="last-name">
+                <span class="required"></span>Last Name:
+                <input type="text"
+                       class="form-input"
+                       name="last_name"
+                       id="last-name"
+                       placeholder="Enter your last name"
+                       required
+                       ng-model="formData.lastName"
+                       ng-blur="registerForm.last_name.blurred = true"/>
+            </label>
+        </div>
+
+        <div class="form-section">
+            <label for="phone-number">
+                <span class="required"></span>Phone Number:
+                <input type="number"
+                       class="form-input"
+                       name="phone_number"
+                       id="phone-number"
+                       placeholder="Enter your phone number"
+                       required
+                       ng-model="formData.phoneNumber"
+                       ng-blur="registerForm.phone_number.blurred = true"/>
+            </label>
+        </div>
+
+    </fieldset>
+    <fieldset>
+
+        <div class="form-section">
+            <label for="username">
+                <span class="required"></span>User Name:
+                <input type="text"
+                       class="form-input"
+                       name="username"
+                       id="username"
+                       placeholder="Enter your User Name"
+                       required
+                       ng-model="formData.username"
+                       ng-blur="registerForm.username.blurred = true"/>
+            </label>
+        </div>
+
+        <div class="form-section">
+            <label for="password">
+                <span class="required"></span>Password:
+                <input type="{{ passwordInputType }}"
+                       class="form-input"
+                       name="password"
+                       id="password"
+                       placeholder="Enter your Password"
+                       required
+                       ng-model="formData.password"
+                       ng-blur="registerForm.password.blurred = true"/>
+            </label>
+        </div>
+
+        <show-password password-input-type="passwordInputType"></show-password>
+
+    </fieldset>
+
+        <input type="submit"
+               value="Submit"/>
+
+    </fieldset>
+</form>
