@@ -18,6 +18,7 @@
 <body ng-app="gamesApp">
 
     <nav>
+        <flash-message></flash-message>
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/login">Login</a></li>
@@ -33,8 +34,12 @@
 
     <script type="text/javascript" src="/webapp/gamesApp.js"></script>
     <script type="text/javascript" src="/webapp/index/IndexController.js"></script>
-    <script type="text/javascript" src="/webapp/login/LoginController.js"></script>
+    <script type="text/javascript" src="/webapp/signin/SigninController.js"></script>
+
     <script type="text/javascript" src="/webapp/app/directive/ShowPasswordDirective.js"></script>
+    <script type="text/javascript" src="/webapp/app/directive/FlashMessageDirective.js"></script>
+    <script type="text/javascript" src="/webapp/app/interceptor/AuthInterceptor.js"></script>
+    <script type="text/javascript" src="/webapp/app/service/FlashMessageService.js"></script>
 
     <script type="text/javascript" src="/webapp/register/RegisterController.js"></script>
 

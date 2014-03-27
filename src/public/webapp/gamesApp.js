@@ -5,15 +5,13 @@
 
         'ngRoute',
         'ngResource',
-        'gamesApp.controller',
         'gamesApp.service',
-        'gamesApp.directive'
+        'gamesApp.directive',
+        'gamesApp.controller'
 
-    ]);
+    ] );
 
     gamesApp.config( [ '$httpProvider', '$routeProvider', '$locationProvider', function( $httpProvider, $routeProvider, $locationProvider ){
-
-        $httpProvider.defaults.withCredentials = true;
 
         $routeProvider.when( '/', {
 
@@ -33,6 +31,8 @@
         } ).otherwise( { redirectTo: '/' } );
 
         $locationProvider.html5Mode( true ).hashPrefix( '!' );
+
+        $httpProvider.interceptors.push( 'AuthInterceptor' );
 
     } ] );
 

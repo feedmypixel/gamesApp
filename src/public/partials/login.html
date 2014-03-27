@@ -2,7 +2,7 @@
 <form name="loginForm" ng-submit="submitForm( loginForm.$valid )"novalidate>
     <fieldset>
 
-        <div class="form-section">
+        <div class="form-section" ng-class="{ error: loginForm.username.$invalid && ( loginForm.username.blurred || form.submitted ) }">
             <label for="username">
                 <span class="required"></span>Username:
                 <input type="text"
@@ -17,7 +17,7 @@
             <p ng-show="loginForm.username.$invalid && ( loginForm.username.blurred || form.submitted )">Please enter your username!</p>
         </div>
 
-        <div class="form-section">
+        <div class="form-section" ng-class="{ error: loginForm.password.$invalid && ( loginForm.password.blurred || form.submitted ) }">
             <label for="password">
                 <span class="required"></span>Password:
                 <input type="{{ passwordInputType }}"

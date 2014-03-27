@@ -2,52 +2,55 @@
 <form name="registerForm" ng-submit="submitForm( registerForm.$valid )" novalidate>
     <fieldset>
 
-        <div class="form-section">
-            <label for="first-name">
+        <div class="form-section" ng-class="{ error: registerForm.firstname.$invalid && ( registerForm.firstname.blurred || form.submitted ) }">
+            <label for="firstname">
                 <span class="required"></span>First Name:
                 <input type="text"
                        class="form-input"
-                       name="first_name"
-                       id="first-name"
+                       name="firstname"
+                       id="firstname"
                        placeholder="Enter your first name"
                        required
                        ng-model="formData.firstName"
                        ng-blur="registerForm.first_name.blurred = true"/>
             </label>
+            <p ng-show="registerForm.firstname.$invalid && ( registerForm.firstname.blurred || form.submitted )">Please enter your First Name!</p>
         </div>
 
-        <div class="form-section">
-            <label for="last-name">
+        <div class="form-section" ng-class="{ error: registerForm.lastname.$invalid && ( registerForm.lastname.blurred || form.submitted ) }">
+            <label for="lastname">
                 <span class="required"></span>Last Name:
                 <input type="text"
                        class="form-input"
-                       name="last_name"
-                       id="last-name"
+                       name="lastname"
+                       id="lastname"
                        placeholder="Enter your last name"
                        required
                        ng-model="formData.lastName"
-                       ng-blur="registerForm.last_name.blurred = true"/>
+                       ng-blur="registerForm.lastname.blurred = true"/>
             </label>
+            <p ng-show="registerForm.lastname.$invalid && ( registerForm.lastname.blurred || form.submitted )">Please enter your Last Name!</p>
         </div>
 
-        <div class="form-section">
-            <label for="phone-number">
+        <div class="form-section" ng-class="{ error: registerForm.phonenumber.$invalid && ( registerForm.phonenumber.blurred || form.submitted ) }">
+            <label for="phonenumber">
                 <span class="required"></span>Phone Number:
-                <input type="number"
+                <input type="tel"
                        class="form-input"
-                       name="phone_number"
-                       id="phone-number"
+                       name="phonenumber"
+                       id="phonenumber"
                        placeholder="Enter your phone number"
                        required
                        ng-model="formData.phoneNumber"
-                       ng-blur="registerForm.phone_number.blurred = true"/>
+                       ng-blur="registerForm.phonenumber.blurred = true"/>
             </label>
+            <p ng-show="registerForm.phonenumber.$invalid && ( registerForm.phonenumber.blurred || form.submitted )">Please enter your Phone Number!</p>
         </div>
 
     </fieldset>
     <fieldset>
 
-        <div class="form-section">
+        <div class="form-section" ng-class="{ error: registerForm.username.$invalid && ( registerForm.username.blurred || form.submitted ) }">
             <label for="username">
                 <span class="required"></span>User Name:
                 <input type="text"
@@ -59,9 +62,10 @@
                        ng-model="formData.username"
                        ng-blur="registerForm.username.blurred = true"/>
             </label>
+            <p ng-show="registerForm.username.$invalid && ( registerForm.username.blurred || form.submitted )">Please enter your username!</p>
         </div>
 
-        <div class="form-section">
+        <div class="form-section" ng-class="{ error: registerForm.password.$invalid && ( registerForm.password.blurred || form.submitted ) }">
             <label for="password">
                 <span class="required"></span>Password:
                 <input type="{{ passwordInputType }}"
@@ -73,6 +77,7 @@
                        ng-model="formData.password"
                        ng-blur="registerForm.password.blurred = true"/>
             </label>
+            <p ng-show="registerForm.password.$invalid && ( registerForm.password.blurred || form.submitted )">Please enter your Password!</p>
         </div>
 
         <show-password password-input-type="passwordInputType"></show-password>
