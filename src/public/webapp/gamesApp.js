@@ -1,6 +1,8 @@
 (function( angular ){
     'use strict';
 
+    var INDEX_URL               = '/';
+    var SIGNOUT_SUCCESS_MESSAGE = 'Bye bye!';
     var gamesApp = angular.module( 'gamesApp', [
 
         'ngRoute',
@@ -18,22 +20,36 @@
             templateUrl: '/partials/index.html',
             controller: 'IndexController'
 
-        } ).when( '/login', {
+        } ).when( '/signin', {
 
-            templateUrl: '/partials/login.html',
-            controller: 'LoginController'
+            templateUrl: '/partials/signin.html',
+            controller: 'SigninController'
 
         } ).when( '/register', {
 
             templateUrl: '/partials/register.html',
             controller: 'RegisterController'
 
+        } ).when( '/profile', {
+
+            templateUrl: '/partials/profile.html',
+            controller: 'ProfileController'
+
+        } ).when( '/signout', {
+
+            resolve: { load: [ '$location', 'UserService', 'FlashMessageService', function( $location, UserService, FlashMessageService ){
+
+                UserService.logout();
+                FlashMessageService.setSuccessMessage( SIGNOUT_SUCCESS_MESSAGE );
+                $location.path( INDEX_URL );
+
+            } ] }
+
         } ).otherwise( { redirectTo: '/' } );
 
         $locationProvider.html5Mode( true ).hashPrefix( '!' );
 
         $httpProvider.interceptors.push( 'AuthInterceptor' );
-
     } ] );
 
     // init app modules

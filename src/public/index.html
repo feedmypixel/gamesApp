@@ -17,12 +17,19 @@
 </head>
 <body ng-app="gamesApp">
 
-    <nav>
+    <nav ng-controller="NavigationController">
+
         <flash-message></flash-message>
-        <ul>
+
+        <ul ng-hide="user.isLoggedIn()">
             <li><a href="/">Home</a></li>
-            <li><a href="/login">Login</a></li>
+            <li><a href="/signin">Sign In</a></li>
             <li><a href="/register">Register</a></li>
+        </ul>
+        <ul ng-show="user.isLoggedIn()">
+            <li><a href="/">Home</a></li>
+            <li><a href="/signout">Sign Out</a></li>
+            <li><a href="/profile">Profile</a></li>
         </ul>
     </nav>
 
@@ -35,11 +42,14 @@
     <script type="text/javascript" src="/webapp/gamesApp.js"></script>
     <script type="text/javascript" src="/webapp/index/IndexController.js"></script>
     <script type="text/javascript" src="/webapp/signin/SigninController.js"></script>
+    <script type="text/javascript" src="/webapp/navigation/NavigationController.js"></script>
+    <script type="text/javascript" src="/webapp/profile/ProfileController.js"></script>
 
     <script type="text/javascript" src="/webapp/app/directive/ShowPasswordDirective.js"></script>
     <script type="text/javascript" src="/webapp/app/directive/FlashMessageDirective.js"></script>
     <script type="text/javascript" src="/webapp/app/interceptor/AuthInterceptor.js"></script>
     <script type="text/javascript" src="/webapp/app/service/FlashMessageService.js"></script>
+    <script type="text/javascript" src="/webapp/app/service/UserService.js"></script>
 
     <script type="text/javascript" src="/webapp/register/RegisterController.js"></script>
 

@@ -5,20 +5,38 @@
 
     gamesAppService.factory( 'FlashMessageService', [ '$rootScope', function( $rootScope ){
 
-        var currentMessage;
+        var SUCCESS_MESSAGE_TYPE = 'success';
+        var ERROR_MESSAGE_TYPE   = 'error';
+        var INFO_MESSAGE_TYPE    = 'info';
+        var message;
+
+        var setMessage = function( messageDetail ){
+
+            message = messageDetail;
+
+            $rootScope.$broadcast( 'flash:message' );
+        };
 
         return {
 
-            setMessage: function( message ){
+            setSuccessMessage: function( message ){
 
-                currentMessage = message;
+                setMessage( { type: SUCCESS_MESSAGE_TYPE, msg: message } );
+            },
 
-                $rootScope.$broadcast( 'flash:message' );
+            setErrorMessage: function( message ){
+
+                setMessage( { type: ERROR_MESSAGE_TYPE, msg: message } );
+            },
+
+            setInformationMessage: function( message ){
+
+                setMessage( { type: INFO_MESSAGE_TYPE, msg: message } );
             },
 
             getMessage: function(){
 
-                return currentMessage;
+                return message;
             }
         };
 

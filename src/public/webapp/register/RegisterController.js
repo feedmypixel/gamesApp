@@ -1,17 +1,16 @@
 (function( angular ){
     'use strict';
 
-    var COOKIE_SESSION_ID_NAME          = 'sessionId';
     var HOME_PAGE_URL                   = '/';
     var REGISTRATION_SUCCESS_MESSAGE    = 'Congratulations your are now registered!';
     var gamesAppController              = angular.module( 'gamesApp.controller' );
 
-    var RegisterController = function( $scope, $location, $window, ApiService, FlashMessageService ){
+    var RegisterController = function( $scope, $location, $window, ApiService, FlashMessageService, UserService ){
 
         this.$scope = $scope;
         this._ApiService = ApiService;
         this._FlashMessageService = FlashMessageService;
-        this._$window = $window;
+        this._UserService = UserService;
         this._$location = $location;
         this.$scope.form = {};
 
@@ -19,8 +18,6 @@
     };
 
     RegisterController.prototype._submitForm = function( isValid ){
-
-        var registerController = this;
 
         this.$scope.form.submitted = true;
 
@@ -31,14 +28,9 @@
                 //auto sign in user
                 user.$signinUser( function( user ){
 
-                    this._$window.sessionStorage.setItem( COOKIE_SESSION_ID_NAME, user.sessionId );
+                    this._UserService.storeUserDetail( { sessionId: user.sessionId, userId: user.userId } );
 
-                    this._FlashMessageService.setMessage( {
-
-                        className: 'success',
-                        msg: REGISTRATION_SUCCESS_MESSAGE
-
-                    } );
+                    this._FlashMessageService.setSuccessMessage( REGISTRATION_SUCCESS_MESSAGE );
 
                     this._$location.path( HOME_PAGE_URL );
 
@@ -48,7 +40,7 @@
         }
     };
 
-    RegisterController.$inject = [ '$scope', '$location', '$window', 'ApiService', 'FlashMessageService' ];
+    RegisterController.$inject = [ '$scope', '$location', '$window', 'ApiService', 'FlashMessageService', 'UserService' ];
 
     gamesAppController.controller( 'RegisterController', RegisterController );
 

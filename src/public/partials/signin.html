@@ -1,4 +1,4 @@
-<h1>Login</h1>
+<h1>Sign In</h1>
 <form name="loginForm" ng-submit="submitForm( loginForm.$valid )"novalidate>
     <fieldset>
 
@@ -14,7 +14,7 @@
                        ng-model="formData.username"
                        ng-blur="loginForm.username.blurred = true" />
             </label>
-            <p ng-show="loginForm.username.$invalid && ( loginForm.username.blurred || form.submitted )">Please enter your username!</p>
+            <p ng-show="loginForm.username.$invalid && ( loginForm.username.blurred || form.submitted )">Enter your Username.</p>
         </div>
 
         <div class="form-section" ng-class="{ error: loginForm.password.$invalid && ( loginForm.password.blurred || form.submitted ) }">
@@ -29,13 +29,14 @@
                        ng-model="formData.password"
                        ng-blur="loginForm.password.blurred = true" />
             </label>
-            <p ng-show="loginForm.password.$invalid && ( loginForm.password.blurred || form.submitted )">Please enter your password!</p>
+            <p ng-show="loginForm.password.$invalid && ( loginForm.password.blurred || form.submitted )">Enter your password.</p>
 
             <show-password password-input-type="passwordInputType"></show-password>
         <div>
 
         <input type="submit"
-               value="Submit"/>
+               value="Submit"
+               ng-disabled="loginForm.$invalid"/>
 
     </fieldset>
 </form>

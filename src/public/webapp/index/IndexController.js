@@ -8,15 +8,8 @@
         this.$scope = $scope;
         this._ApiService = ApiService;
 
-        this.$scope.getAllGameTitles = this._getAllGameTitles.bind( this );
-
-        this._initialize();
+        this._getAllGameTitles.call( this );
     }
-
-    IndexController.prototype._initialize = function(){
-
-        this.$scope.getAllGameTitles();
-    };
 
     IndexController.prototype._getAllGameTitles = function(){
 
@@ -24,11 +17,7 @@
 
             this.$scope.gamesTitles = response.titles;
 
-        }.bind( this ), function( err ){
-
-
-
-        }.bind( this ) );
+        }.bind( this ), function( err ){} );
 
     }
 
