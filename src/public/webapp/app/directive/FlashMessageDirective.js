@@ -10,9 +10,9 @@
 
             restrict: 'E',
 
-            templateUrl: '/templates/FlashMessageTemplate.html',
+            templateUrl: '/views/templates/FlashMessageTemplate.html',
 
-            link: function( scope, element, attributes ){
+            link: function( scope, element ){
 
                 scope.$on( 'flash:message', function(){
 

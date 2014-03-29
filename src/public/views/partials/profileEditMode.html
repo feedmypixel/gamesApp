@@ -1,23 +1,4 @@
-<h1>Profile</h1>
-
-<button ng-click="editForm = true">Edit</button>
-
-<button ng-show="editForm" ng-click="editForm = false">Done</button>
-
-<ul ng-hide="editForm">
-    <li ng-if="userInfo !== 'userId' && userInfo !== 'password'" ng-repeat="(userInfo, userValue) in formData">
-        <ul>
-            <li>{{ userInfo }}</li>
-            <li>{{ userValue }}</li>
-        </ul>
-    </li>
-</ul>
-
-<form name="userForm" ng-show="editForm" ng-submit="submitForm( userForm.$valid )" novalidate>
-
-    <input type="hidden"
-           value="formData.userId"
-           name="userId"/>
+<form name="userForm" ng-submit="submitForm( userForm.$valid )" novalidate>
 
     <fieldset>
 
@@ -90,7 +71,7 @@
             </label>
             <p ng-show="userForm.username.$invalid && ( userForm.username.blurred || form.submitted )">Enter your Username. <span class="info">3 - 20 characters please.</span></p>
         </div>
-        
+
         <div class="form-section" ng-class="{ error: userForm.password.$invalid && ( userForm.password.blurred || form.submitted ) }">
             <label for="password">
                 <span class="required"></span>Password:
@@ -106,7 +87,7 @@
             <p ng-show="userForm.password.$invalid && ( userForm.password.blurred || form.submitted )">Please enter your Password. <span class="info">Must contain at least one number, one letter and be 6 - 10 characters please.</span></p>
         </div>
 
-        <show-password password-input-type="passwordInputType"></show-password>        
+        <show-password password-input-type="passwordInputType"></show-password>
 
         <div class="form-section" ng-class="{ error: userForm.genderIsFemale.$invalid && ( userForm.genderIsFemale.blurred || form.submitted ) }">
             <span class="required"></span>Gender:
@@ -151,14 +132,13 @@
                 <textarea class="form-textarea"
                           name="notes"age
                           id="notes"
+                          placeholder="Enter your notes"
                           ng-model="formData.notes"
                           ng-blur="userForm.password.blurred = true"
                           ng-maxlength="2000">
                 </textarea>
             </label>
         </div>
-
-
 
     </fieldset>
 

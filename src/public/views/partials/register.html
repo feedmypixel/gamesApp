@@ -82,10 +82,9 @@
                        placeholder="Enter your Password"
                        required
                        ng-model="formData.password"
-                       ng-blur="registerForm.password.blurred = true"
-                       ng-pattern="/^(?=.*\d+)(?=.*[a-zA-Z])[0-9a-zA-Z]{6,10}$/"/>
+                       ng-blur="registerForm.password.blurred = true"/>
             </label>
-            <p ng-show="registerForm.password.$invalid && ( registerForm.password.blurred || form.submitted )">Please enter your Password. <span class="info">Must contain at least one number, one letter and be 6 - 10 characters please.</span></p>
+            <p ng-show="registerForm.password.$invalid && ( registerForm.password.blurred || form.submitted )">Please enter your Password.</p>
         </div>
 
         <show-password password-input-type="passwordInputType"></show-password>

@@ -1,0 +1,16 @@
+<game-titles-header user="user"></game-titles-header>
+
+<ul ng-if="!user.isLoggedIn()">
+    <li ng-repeat="game in gamesTitles">
+        {{ game.name }}
+        {{ game.description }}
+    </li>
+</ul>
+
+<ul ng-if="user.isLoggedIn()">
+    <li ng-repeat="game in gamesTitles">
+        <h3>{{ game.name }}</h3>
+        <p>{{ game.description }}</p>
+        <button ng-click="addTitleToUserList( game.id )">Add</button>
+    </li>
+</ul>

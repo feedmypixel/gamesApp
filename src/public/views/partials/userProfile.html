@@ -1,0 +1,13 @@
+<nav>
+    <li><button ng-click="profileMode = 'edit'">Edit</button></li>
+    <li ng-show="profileMode === 'edit'"><button ng-click="profileMode = 'view'">Done</button></li>
+</nav>
+
+<div ng-switch="profileMode">
+    <div ng-switch-when="view">
+         <div ng-include="'/views/partials/profileViewMode.html'"></div>
+    </div>
+    <div ng-switch-when="edit">
+        <div ng-include="'/views/partials/profileEditMode.html'"></div>
+    </div>
+</div>

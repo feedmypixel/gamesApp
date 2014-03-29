@@ -1,0 +1,10 @@
+<game-titles-header is-logged-in="user.isLoggedIn()"></game-titles-header>
+<p ng-hide="gameTitles">You currently don't have any titles saved with us!</p>
+
+<ul ng-show="gameTitles">
+    <li ng-repeat="game in gameTitles">
+        <h3>{{ game.name }}</h3>
+        <p>{{ game.description }}</p>
+        <button ng-click="removeTitleFromUserList( game.id )">Delete</button>
+    </li>
+</ul>

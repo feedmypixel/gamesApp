@@ -17,23 +17,28 @@
 
         $routeProvider.when( '/', {
 
-            templateUrl: '/partials/index.html',
+            templateUrl: '/views/partials/index.html',
             controller: 'IndexController'
 
         } ).when( '/signin', {
 
-            templateUrl: '/partials/signin.html',
+            templateUrl: '/views/partials/signin.html',
             controller: 'SigninController'
 
         } ).when( '/register', {
 
-            templateUrl: '/partials/register.html',
+            templateUrl: '/views/partials/register.html',
             controller: 'RegisterController'
 
-        } ).when( '/profile', {
+        } ).when( '/user/titles', {
 
-            templateUrl: '/partials/profile.html',
-            controller: 'ProfileController'
+            templateUrl: '/views/partials/userTitles.html',
+            controller: 'UserTitlesController'
+
+        } ).when( '/user', {
+
+            templateUrl: '/views/partials/userProfile.html',
+            controller: 'UserController'
 
         } ).when( '/signout', {
 

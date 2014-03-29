@@ -1,6 +1,7 @@
 (function( angular ){
     'use strict';
 
+    var PASSWORD_INPUT_TYPE = 'password';
     var gamesAppDirective = angular.module( 'gamesApp.directive' );
 
     gamesAppDirective.directive( 'showPassword', function(){
@@ -14,11 +15,11 @@
                 passwordInputType: '='
             },
 
-            templateUrl: '/templates/ShowPasswordTemplate.html',
+            templateUrl: '/views/templates/ShowPasswordTemplate.html',
 
-            link: function( scope, element, attributes ){
+            link: function( scope ){
 
-                scope.passwordInputType = 'password';
+                scope.passwordInputType = PASSWORD_INPUT_TYPE;
             }
         };
 
