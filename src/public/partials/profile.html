@@ -1,0 +1,170 @@
+<h1>Profile</h1>
+
+<button ng-click="editForm = true">Edit</button>
+
+<button ng-show="editForm" ng-click="editForm = false">Done</button>
+
+<ul ng-hide="editForm">
+    <li ng-if="userInfo !== 'userId' && userInfo !== 'password'" ng-repeat="(userInfo, userValue) in formData">
+        <ul>
+            <li>{{ userInfo }}</li>
+            <li>{{ userValue }}</li>
+        </ul>
+    </li>
+</ul>
+
+<form name="userForm" ng-show="editForm" ng-submit="submitForm( userForm.$valid )" novalidate>
+
+    <input type="hidden"
+           value="formData.userId"
+           name="userId"/>
+
+    <fieldset>
+
+        <div class="form-section" ng-class="{ error: userForm.firstname.$invalid && ( userForm.firstname.blurred || form.submitted ) }">
+            <label for="firstname">
+                <span class="required"></span>First Name:
+                <input type="text"
+                       class="form-input"
+                       name="firstname"
+                       id="firstname"
+                       placeholder="Enter your first name"
+                       required
+                       ng-model="formData.firstName"
+                       ng-blur="userForm.firstname.blurred = true"
+                       ng-minlength="3"
+                       ng-maxlength="20"/>
+            </label>
+            <p ng-show="userForm.firstname.$invalid && ( userForm.firstname.blurred || form.submitted )">Enter your First Name. <span class="info">3 - 20 characters please.</span></p>
+        </div>
+
+        <div class="form-section" ng-class="{ error: userForm.lastname.$invalid && ( userForm.lastname.blurred || form.submitted ) }">
+            <label for="lastname">
+                <span class="required"></span>Last Name:
+                <input type="text"
+                       class="form-input"
+                       name="lastname"
+                       id="lastname"
+                       placeholder="Enter your last name"
+                       required
+                       ng-model="formData.lastName"
+                       ng-blur="userForm.lastname.blurred = true"
+                       ng-minlength="3"
+                       ng-maxlength="20"/>
+            </label>
+            <p ng-show="userForm.lastname.$invalid && ( userForm.lastname.blurred || form.submitted )">Enter your Last Name. <span class="info">3 - 20 characters please.</span></p>
+        </div>
+
+        <div class="form-section" ng-class="{ error: userForm.phonenumber.$invalid && ( userForm.phonenumber.blurred || form.submitted ) }">
+            <label for="phonenumber">
+                <span class="required"></span>Phone Number:
+                <input type="tel"
+                       class="form-input"
+                       name="phonenumber"
+                       id="phonenumber"
+                       placeholder="Enter your phone number"
+                       required
+                       ng-model="formData.phoneNumber"
+                       ng-blur="userForm.phonenumber.blurred = true"
+                       ng-pattern="/\d{11}/"/>
+            </label>
+            <p ng-show="userForm.phonenumber.$invalid && ( userForm.phonenumber.blurred || form.submitted )">Enter a Phone Number. <span class="info">A valid phone number of 11 numbers please.</span></p>
+        </div>
+
+    </fieldset>
+    <fieldset>
+
+        <div class="form-section" ng-class="{ error: userForm.username.$invalid && ( userForm.username.blurred || form.submitted ) }">
+            <label for="username">
+                <span class="required"></span>User Name:
+                <input type="text"
+                       class="form-input"
+                       name="username"
+                       id="username"
+                       placeholder="Enter your User Name"
+                       required
+                       ng-model="formData.username"
+                       ng-blur="userForm.username.blurred = true"
+                       ng-minlength="3"
+                       ng-maxlength="20"/>
+            </label>
+            <p ng-show="userForm.username.$invalid && ( userForm.username.blurred || form.submitted )">Enter your Username. <span class="info">3 - 20 characters please.</span></p>
+        </div>
+        
+        <div class="form-section" ng-class="{ error: userForm.password.$invalid && ( userForm.password.blurred || form.submitted ) }">
+            <label for="password">
+                <span class="required"></span>Password:
+                <input type="{{ passwordInputType }}"
+                       class="form-input"
+                       name="password"
+                       id="password"
+                       placeholder="Enter your Password"
+                       required
+                       ng-model="formData.password"
+                       ng-blur="userForm.password.blurred = true"/>
+            </label>
+            <p ng-show="userForm.password.$invalid && ( userForm.password.blurred || form.submitted )">Please enter your Password. <span class="info">Must contain at least one number, one letter and be 6 - 10 characters please.</span></p>
+        </div>
+
+        <show-password password-input-type="passwordInputType"></show-password>        
+
+        <div class="form-section" ng-class="{ error: userForm.genderIsFemale.$invalid && ( userForm.genderIsFemale.blurred || form.submitted ) }">
+            <span class="required"></span>Gender:
+            <label for="male">
+                Male:
+                <input type="radio"
+                       class="form-radio"
+                       name="genderIsFemale"
+                       id="male"
+                       ng-value="false"
+                       ng-model="formData.genderIsFemale"
+                       ng-blur="userForm.genderIsFemale.blurred = true"/>
+            </label>
+            <label for="female">
+                Female:
+                <input type="radio"
+                       class="form-radio"
+                       name="genderIsFemale"
+                       id="female"
+                       ng-value="true"
+                       ng-model="formData.genderIsFemale"
+                       ng-blur="userForm.genderIsFemale.blurred = true"/>
+            </label>
+        </div>
+
+        <div class="form-section" ng-class="{ error: userForm.age.$invalid && ( userForm.age.blurred || form.submitted ) }">
+            <span class="required"></span>Age:
+            <label for="age">
+                <select name="age"
+                        id="age"
+                        required
+                        ng-model="formData.age"
+                        ng-options="ageValue for ageValue in ageRange">
+                    <option value="">-- Choose Your Age --</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="form-section" ng-class="{ error: userForm.notes.$invalid && ( userForm.notes.blurred || form.submitted ) }">
+            <label for="notes">
+                Notes:
+                <textarea class="form-textarea"
+                          name="notes"age
+                          id="notes"
+                          ng-model="formData.notes"
+                          ng-blur="userForm.password.blurred = true"
+                          ng-maxlength="2000">
+                </textarea>
+            </label>
+        </div>
+
+
+
+    </fieldset>
+
+        <input type="submit"
+               value="Submit"
+               ng-disabled="userForm.$invalid"/>
+
+    </fieldset>
+</form>

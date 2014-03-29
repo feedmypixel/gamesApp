@@ -10,7 +10,7 @@
 
             restrict: 'E',
 
-            templateUrl: 'templates/FlashMessageTemplate.html',
+            templateUrl: '/templates/FlashMessageTemplate.html',
 
             link: function( scope, element, attributes ){
 

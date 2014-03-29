@@ -1,9 +1,9 @@
 (function( angular ){
     'use strict';
 
-    var INDEX_URL               = '/';
+    var INDEX_PAGE_URL               = '/';
     var SIGNOUT_SUCCESS_MESSAGE = 'Bye bye!';
-    var gamesApp = angular.module( 'gamesApp', [
+    var gamesApp                = angular.module( 'gamesApp', [
 
         'ngRoute',
         'ngResource',
@@ -41,7 +41,7 @@
 
                 UserService.logout();
                 FlashMessageService.setSuccessMessage( SIGNOUT_SUCCESS_MESSAGE );
-                $location.path( INDEX_URL );
+                $location.path( INDEX_PAGE_URL );
 
             } ] }
 
