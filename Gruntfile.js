@@ -15,9 +15,9 @@ module.exports = function( grunt ){
 
                 options: {
 
-                    args: [ 'dev' ],
+                    args: [],
 
-                    nodeArgs: [ '--debug' ],
+                    nodeArgs: [],
 
                     callback: function ( nodemon ) {
 
