@@ -20,18 +20,23 @@ module.exports = function( config ){
             'src/public/lib/bower-components/angular-route/angular-route.js',
             'src/public/lib/bower-components/angular-resource/angular-resource.js',
 
-            'src/public//webapp/gamesApp.js',
-            'src/public//webapp/index/IndexController.js',
-            'src/public//webapp/login/LoginController.js',
-            'src/public//webapp/app/directive/ShowPasswordDirective.js',
-
-            'src/public//webapp/register/RegisterController.js',
-
-            'src/public//webapp/api/ApiService.js',
+            'src/public/webapp/gamesApp.js',
+            'src/public/webapp/index/IndexController.js',
+            'src/public/webapp/signin/SigninController.js',
+            'src/public/webapp/navigation/NavigationController.js',
+            'src/public/webapp/user/UserController.js',
+            'src/public/webapp/register/RegisterController.js',
+            'src/public/webapp/app/directive/ShowPasswordDirective.js',
+            'src/public/webapp/app/directive/FlashMessageDirective.js',
+            'src/public/webapp/app/interceptor/HttpInterceptor.js',
+            'src/public/webapp/app/service/FlashMessageService.js',
+            'src/public/webapp/app/service/UserService.js',
+            'src/public/webapp/app/filter/CamelCaseToUppercaseWordsFilter.js',
+            'src/public/webapp/api/ApiService.js',
 
             'src/test/js/spec/*Spec.js',
 
-            'src/public/templates/*.html'
+            'src/public/views/templates/*.html'
         ],
 
 
@@ -43,10 +48,10 @@ module.exports = function( config ){
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
 
-            'src/public/templates/*.html': 'html2js'
+            'src/public/views/templates/*.html': 'html2js'
         },
 
-        // strip the unnecessary from the url to create the url as the app requires it
+        // strip the unnecessary from the template url to create the template url as the app requires it
         ngHtml2JsPreprocessor: {
 
             stripPrefix: 'src/public'

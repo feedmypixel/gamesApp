@@ -9,7 +9,7 @@ describe( 'Show Password Directive Tests', function(){
     beforeEach( function(){
 
         module( 'gamesApp.directive' );
-        module( '/templates/ShowPasswordTemplate.html' );
+        module( '/views/templates/ShowPasswordTemplate.html' );
 
     } );
 
@@ -23,9 +23,10 @@ describe( 'Show Password Directive Tests', function(){
 
         scope.$digest();
 
-        showPasswordElementScope = showPasswordElement.children().scope()
+        showPasswordElementScope = showPasswordElement.children().scope();
 
     } ) );
+
 
     it( 'Default value of passwordInputType is "password"', function(){
 
