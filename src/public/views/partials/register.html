@@ -1,98 +1,135 @@
-<h1>Register</h1>
+<h2>Register</h2>
 <form name="registerForm" ng-submit="submitForm( registerForm.$valid )" novalidate>
     <fieldset>
 
-        <div class="form-section" ng-class="{ error: registerForm.firstname.$invalid && ( registerForm.firstname.blurred || form.submitted ) }">
+        <div>
             <label for="firstname">
-                <span class="required"></span>First Name:
+                <span class="icon-required font-size-11pt"></span>First Name:
                 <input type="text"
                        class="form-input"
                        name="firstname"
                        id="firstname"
                        placeholder="Enter your first name"
                        required
+                       ng-class="{ error: registerForm.firstname.$invalid && ( registerForm.firstname.blurred || form.submitted ) }"
                        ng-model="formData.firstName"
                        ng-blur="registerForm.firstname.blurred = true"
                        ng-minlength="3"
                        ng-maxlength="20"/>
             </label>
-            <p ng-show="registerForm.firstname.$invalid && ( registerForm.firstname.blurred || form.submitted )">Enter your First Name. <span class="info">3 - 20 characters please.</span></p>
+
+            <div class="error-container">
+                <div class="font-size-11pt" ng-show="registerForm.firstname.$invalid && ( registerForm.firstname.blurred || form.submitted )">
+                    <span class="error-text">Please enter your first name</span>
+                    <span class="icon-font icon-info font-size-24pt"></span><span class="info-text">It's got to be 3 - 20 characters</span>
+                </div>
+            </div>
         </div>
 
-        <div class="form-section" ng-class="{ error: registerForm.lastname.$invalid && ( registerForm.lastname.blurred || form.submitted ) }">
+        <div>
             <label for="lastname">
-                <span class="required"></span>Last Name:
+                <span class="icon-required font-size-11pt"></span>Last Name:
                 <input type="text"
                        class="form-input"
                        name="lastname"
                        id="lastname"
                        placeholder="Enter your last name"
                        required
+                       ng-class="{ error: registerForm.lastname.$invalid && ( registerForm.lastname.blurred || form.submitted ) }"
                        ng-model="formData.lastName"
                        ng-blur="registerForm.lastname.blurred = true"
                        ng-minlength="3"
                        ng-maxlength="20"/>
             </label>
-            <p ng-show="registerForm.lastname.$invalid && ( registerForm.lastname.blurred || form.submitted )">Enter your Last Name. <span class="info">3 - 20 characters please.</span></p>
+
+            <div class="error-container">
+                <div class="font-size-11pt" ng-show="registerForm.lastname.$invalid && ( registerForm.lastname.blurred || form.submitted )">
+                    <span class="error-text">Please enter your last name</span>
+                    <span class="icon-font icon-info font-size-24pt"></span><span class="info-text">It's got to be 3 - 20 characters</span>
+                </div>
+            </div>
         </div>
 
-        <div class="form-section" ng-class="{ error: registerForm.phonenumber.$invalid && ( registerForm.phonenumber.blurred || form.submitted ) }">
+        <div>
             <label for="phonenumber">
-                <span class="required"></span>Phone Number:
+                <span class="icon-required font-size-11pt"></span>Phone Number:
                 <input type="tel"
                        class="form-input"
                        name="phonenumber"
                        id="phonenumber"
                        placeholder="Enter your phone number"
                        required
+                       ng-class="{ error: registerForm.phonenumber.$invalid && ( registerForm.phonenumber.blurred || form.submitted ) }"
                        ng-model="formData.phoneNumber"
                        ng-blur="registerForm.phonenumber.blurred = true"
                        ng-pattern="/\d{11}/"/>
             </label>
-            <p ng-show="registerForm.phonenumber.$invalid && ( registerForm.phonenumber.blurred || form.submitted )">Enter a Phone Number. <span class="info">A valid phone number of 11 numbers please.</span></p>
+
+            <div class="error-container">
+                <div class="font-size-11pt" ng-show="registerForm.phonenumber.$invalid && ( registerForm.phonenumber.blurred || form.submitted )">
+                    <span class="error-text">Please enter your phone number</span>
+                    <span class="icon-font icon-info font-size-24pt"></span><span class="info-text">It's got to be 11 characters</span>
+                </div>
+            </div>
         </div>
 
     </fieldset>
     <fieldset>
 
-        <div class="form-section" ng-class="{ error: registerForm.username.$invalid && ( registerForm.username.blurred || form.submitted ) }">
+        <div>
             <label for="username">
-                <span class="required"></span>User Name:
+                <span class="icon-required font-size-11pt"></span>User Name:
                 <input type="text"
                        class="form-input"
                        name="username"
                        id="username"
                        placeholder="Enter your User Name"
                        required
+                       ng-class="{ error: registerForm.username.$invalid && ( registerForm.username.blurred || form.submitted ) }"
                        ng-model="formData.username"
                        ng-blur="registerForm.username.blurred = true"
                        ng-minlength="3"
                        ng-maxlength="20"/>
             </label>
-            <p ng-show="registerForm.username.$invalid && ( registerForm.username.blurred || form.submitted )">Enter your Username. <span class="info">3 - 20 characters please.</span></p>
+
+            <div class="error-container">
+                <div class="font-size-11pt" ng-show="registerForm.username.$invalid && ( registerForm.username.blurred || form.submitted )">
+                    <span class="error-text">Please enter a user name</span>
+                    <span class="icon-font icon-info font-size-24pt"></span><span class="info-text">It's got to be 3 - 20 characters</span>
+                </div>
+            </div>
         </div>
 
-        <div class="form-section" ng-class="{ error: registerForm.password.$invalid && ( registerForm.password.blurred || form.submitted ) }">
+        <div>
             <label for="password">
-                <span class="required"></span>Password:
+                <span class="icon-required font-size-11pt"></span>Password:
                 <input type="{{ passwordInputType }}"
                        class="form-input"
                        name="password"
                        id="password"
                        placeholder="Enter your Password"
                        required
+                       ng-class="{ error: registerForm.password.$invalid && ( registerForm.password.blurred || form.submitted ) }"
                        ng-model="formData.password"
                        ng-blur="registerForm.password.blurred = true"/>
             </label>
-            <p ng-show="registerForm.password.$invalid && ( registerForm.password.blurred || form.submitted )">Please enter your Password.</p>
-        </div>
 
-        <show-password password-input-type="passwordInputType"></show-password>
+            <show-password password-input-type="passwordInputType"></show-password>
+
+            <div class="error-container">
+                <div class="font-size-11pt" ng-show="registerForm.password.$invalid && ( registerForm.password.blurred || form.submitted )">
+                    <span class="error-text">Please enter a password</span>
+                    <span class="icon-font icon-info font-size-24pt"></span><span class="info-text">Make it a good one!</span>
+                </div>
+            </div>
+        </div>
 
     </fieldset>
 
-        <input type="submit"
-               value="Submit"
+        <input class="button button-text font-size-16pt"
+               type="submit"
+               value="Register"
+               ng-class="{ 'button-disabled': registerForm.$invalid }"
                ng-disabled="registerForm.$invalid"/>
 
     </fieldset>

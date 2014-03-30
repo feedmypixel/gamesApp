@@ -1,0 +1,50 @@
+/* 528px/16px = 33em */
+@media all and (min-width: 33em) {
+
+}
+
+/* 600px/16px = 37.500em */
+@media all and (min-width: 37.5em) {
+    .content-primary {
+        float: left;
+    }
+
+    .content-secondary {
+        float: right;
+    }
+
+    .half-width {
+        width: 50%;
+    }
+
+    .navigation {
+        float: right;
+    }
+
+    .form-input,
+    .form-textarea {
+        width: 50%;
+    }
+
+    .site-title {
+        margin-bottom: 1em;
+    }
+}
+
+/* 768px/16px = 48em */
+@media all and (min-width: 48em) {
+
+}
+
+/* 960px/16px = 60em */
+@media all and (min-width: 60em) {
+
+}
+
+/* 1280px/16px = 80em */
+@media all and (min-width: 80em) {
+
+}
+
+
+

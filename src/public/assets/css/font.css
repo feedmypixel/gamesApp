@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'gamesApp';
+    src:url('../font/gamesApp.eot');
+    src:url('../font/gamesApp.eot?#iefix') format('embedded-opentype'),
+        url('../font/gamesApp.woff') format('woff'),
+        url('../font/gamesApp.ttf') format('truetype'),
+        url('../font/gamesApp.svg#gamesApp') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon-exit,
+.icon-info,
+.icon-required,
+.icon-add,
+.icon-delete,
+.icon-edit {
+    font-family: 'gamesApp';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-font {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.icon-font:hover {
+    text-decoration: none;
+    color: #9a9999;
+}
+
+.icon-add {
+    color: #75ce39;
+    margin-top: .8em;
+}
+
+.icon-delete {
+    color: #e8523f;
+    margin-top: .8em;
+}
+
+.icon-required {
+    color: #e8523f;
+    margin-right: .4em;
+    vertical-align: middle;
+}
+
+.icon-info {
+    color: #398cce;
+    vertical-align: sub;
+    margin: 0 .1em 0 .4em;
+}
+
+.icon-exit,
+.icon-edit {
+    margin-left: .4em;
+    color: #585858;
+}
+
+.icon-exit:before {
+    content: "\e602";
+}
+
+.icon-info:before {
+    content: "\f05a";
+}
+
+.icon-required:before {
+    content: "\f069";
+}
+
+.icon-add:before {
+    content: "\e600";
+}
+
+.icon-delete:before {
+    content: "\e601";
+}
+
+.icon-edit:before {
+    content: "\f040";
+}

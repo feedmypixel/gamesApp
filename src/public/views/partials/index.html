@@ -1,16 +1,33 @@
-<game-titles-header user="user"></game-titles-header>
+<div class="half-width" ng-class="{ 'content-primary': isLoggedIn, 'center-align': !isLoggedIn }">
 
-<ul ng-if="!user.isLoggedIn()">
-    <li ng-repeat="game in gamesTitles">
-        {{ game.name }}
-        {{ game.description }}
-    </li>
-</ul>
+    <div class="welcome-text font-size-18pt" ng-hide="isLoggedIn"><strong class="font-size-30pt">Welcome</strong> to the Game Chooser App, please <a href="/register" class="underline">Register</a> or <a href="/signin" class="underline">Signin</a> and choose your game titles.
+    </div>
 
-<ul ng-if="user.isLoggedIn()">
-    <li ng-repeat="game in gamesTitles">
-        <h3>{{ game.name }}</h3>
-        <p>{{ game.description }}</p>
-        <button ng-click="addTitleToUserList( game.id )">Add</button>
-    </li>
-</ul>
+    <h2 class="centered-text">Available Game Titles</h2>
+    <ul>
+        <li class="list-detail group" ng-class="{ 'list-disabled': game.disabled }" ng-repeat="game in availableGamesTitles">
+            <div class="list-content-primary">
+                <h3>{{ game.name }}</h3>
+                <p class="list-content font-size-13pt">{{ game.description }}</p>
+            </div>
+            <a class="icon-font icon-add font-size-24pt list-content-secondary"
+               ng-class="{ 'disabled': !isLoggedIn }"
+               ng-click="addTitleToUserList( game.id )"></a>
+        </li>
+    </ul>
+</div>
+
+<div ng-if="isLoggedIn" class="content-secondary half-width">
+    <h2 class="centered-text">Your Game Titles</h2>
+    <p class="centered-text" ng-hide="userGameTitles">You currently don't have any titles saved with us!</p>
+    <ul>
+        <li class="list-detail group" ng-repeat="game in userGameTitles">
+            <div class="list-content-primary">
+                <h3>{{ game.name }}</h3>
+                <p class="list-content font-size-13pt">{{ game.description }}</p>
+            </div>
+            <a class="icon-font icon-delete font-size-24pt list-content-secondary"
+               ng-click="removeTitleFromUserList( game.id )"></a>
+        </li>
+    </ul>
+</div>

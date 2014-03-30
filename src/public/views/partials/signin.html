@@ -1,41 +1,56 @@
-<h1>Sign In</h1>
+<h2>Sign In</h2>
 <form name="loginForm" ng-submit="submitForm( loginForm.$valid )"novalidate>
     <fieldset>
 
-        <div class="form-section" ng-class="{ error: loginForm.username.$invalid && ( loginForm.username.blurred || form.submitted ) }">
+        <div>
             <label for="username">
-                <span class="required"></span>Username:
+                <span class="icon-required font-size-11pt"></span>Username:
                 <input type="text"
                        class="form-input"
                        name="username"
                        id="username"
                        placeholder="Enter your username"
                        required
+                       ng-class="{ error: loginForm.username.$invalid && ( loginForm.username.blurred || form.submitted ) }"
                        ng-model="formData.username"
                        ng-blur="loginForm.username.blurred = true" />
             </label>
-            <p ng-show="loginForm.username.$invalid && ( loginForm.username.blurred || form.submitted )">Enter your Username.</p>
+            <div class="error-container">
+                <div class="font-size-11pt" ng-show="loginForm.username.$invalid && ( loginForm.username.blurred || form.submitted )">
+                    <span class="error-text">Please enter your user name</span>
+                </div>
+            </div>
         </div>
 
-        <div class="form-section" ng-class="{ error: loginForm.password.$invalid && ( loginForm.password.blurred || form.submitted ) }">
+        <div>
             <label for="password">
-                <span class="required"></span>Password:
+                <span class="icon-required font-size-11pt"></span>Password:
                 <input type="{{ passwordInputType }}"
                        class="form-input"
                        name="password"
                        id="password"
                        placeholder="Enter your password"
                        required
+                       ng-class="{ error: loginForm.password.$invalid && ( loginForm.password.blurred || form.submitted ) }"
                        ng-model="formData.password"
                        ng-blur="loginForm.password.blurred = true" />
             </label>
-            <p ng-show="loginForm.password.$invalid && ( loginForm.password.blurred || form.submitted )">Enter your password.</p>
 
             <show-password password-input-type="passwordInputType"></show-password>
+
+            <div class="error-container">
+                <div class="font-size-11pt" ng-show="loginForm.password.$invalid && ( loginForm.password.blurred || form.submitted )">
+                    <span class="error-text">Please enter your password</span>
+                </div>
+            </div>
+
+
         <div>
 
-        <input type="submit"
-               value="Submit"
+        <input class="button button-text font-size-16pt"
+               type="submit"
+               value="Sign In"
+               ng-class="{ 'button-disabled': loginForm.$invalid }"
                ng-disabled="loginForm.$invalid"/>
 
     </fieldset>

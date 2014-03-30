@@ -1,0 +1,25 @@
+.content-body {
+    padding: 1.6em 1em;
+}
+
+.content-header {
+    margin: 0 auto;
+    padding: 1.6em .6em 1em;
+    background-color: #343131;
+}
+
+.half-width {
+    padding: .4em;
+}
+
+.center-align {
+    margin: 0 auto;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.welcome-text {
+    margin: 1em auto 2.4em;
+}

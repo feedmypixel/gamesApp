@@ -3,7 +3,8 @@
 
     var GENDER_MALE                 = 'male';
     var GENDER_FEMALE               = 'female';
-    var PROFILE_SECTION_NAME        = 'profile';
+    var EDIT_PROFILE_SECTION_NAME   = 'edit';
+    var VIEW_PROFILE_SECTION_NAME   = 'view';
     var FORM_SUBMIT_SUCCESS_MESSAGE = 'Your details have been saved';
     var gamesAppController          = angular.module( 'gamesApp.controller' );
 
@@ -15,7 +16,7 @@
         this._FlashMessageService = FlashMessageService
         this._userId = UserService.getUserId();
 
-        this.$scope.profileSection = PROFILE_SECTION_NAME;
+        this.$scope.profileMode = VIEW_PROFILE_SECTION_NAME;
         this.$scope.submitForm = this._submitForm.bind( this );
 
         this._getUserDetail.call( this );
@@ -55,6 +56,8 @@
     UserController.prototype._submitForm = function(){
 
         this._ApiService.setUserDetail( this.$scope.formData ).$promise.then( function( response ){
+
+            this.$scope.profileMode = EDIT_PROFILE_SECTION_NAME;
 
             this.$scope.userData = this._createUserData( this.$scope.formData );
 

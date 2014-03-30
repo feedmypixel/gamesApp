@@ -1,0 +1,56 @@
+.button {
+    background-color: #91ca54;
+    border: 1px solid #88cc3f;
+    min-width: 10em;
+    padding: 1em;
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+    background-color: #a0d760;
+    border: 1px solid #a0d760;
+}
+
+.button-disabled {
+    background-color: #d8d8d8;
+    border: 1px solid #d8d8d8;
+}
+
+.button-disabled:hover,
+.button-disabled:active,
+.button-disabled:focus {
+    background-color: #d8d8d8;
+    border: 1px solid #d8d8d8;
+}
+
+.button-text {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+    margin: 0;
+    -webkit-border-radius: .4em;
+       -moz-border-radius: .4em;
+            border-radius: .4em;
+    color: #fff;
+    display: inline-block;
+    min-width: 8em;
+    padding: .8em;
+    text-align: center;
+    cursor: pointer;
+    letter-spacing: .05em;
+    -webkit-transition: background-color 300ms ease-out;
+       -moz-transition: background-color 300ms ease-out;
+         -o-transition: background-color 300ms ease-out;
+            transition: background-color 300ms ease-out;
+}
+
+.button-text:hover,
+.button-text:active,
+.button-text:focus {
+    text-decoration: none;
+}

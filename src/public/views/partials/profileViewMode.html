@@ -1,7 +1,7 @@
 <ul>
-    <li ng-repeat="(userInfo, userValue) in userData">
+    <li class="list-container" ng-repeat="(userInfo, userValue) in userData">
         <ul>
-            <li>{{ userInfo }}</li>
+            <li class="horizontal-list font-size-24pt">{{ userInfo | camelCaseToUppercaseWords }}</li>
             <li>{{ userValue }}</li>
         </ul>
     </li>

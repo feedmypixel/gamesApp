@@ -1,0 +1,34 @@
+a {
+    text-decoration: none;
+    color: #343131;
+}
+
+a:hover,
+a:active,
+a:focus {
+    text-decoration: underline;
+}
+
+a:focus {
+  outline: none;
+}
+
+
+a.underline {
+    text-decoration: underline;
+}
+
+a.underline:hover {
+    text-decoration: none;
+}
+
+a.no-underline,
+a.no-underline:active,
+a.no-underline:focus,
+a.no-underline:hover {
+    text-decoration: none;
+}
+
+a.white-link {
+    color: #fff;
+}

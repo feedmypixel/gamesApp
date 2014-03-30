@@ -9,7 +9,8 @@
         'ngResource',
         'gamesApp.service',
         'gamesApp.directive',
-        'gamesApp.controller'
+        'gamesApp.controller',
+        'gamesApp.filter'
 
     ] );
 
@@ -30,11 +31,6 @@
             templateUrl: '/views/partials/register.html',
             controller: 'RegisterController'
 
-        } ).when( '/user/titles', {
-
-            templateUrl: '/views/partials/userTitles.html',
-            controller: 'UserTitlesController'
-
         } ).when( '/user', {
 
             templateUrl: '/views/partials/userProfile.html',
@@ -54,12 +50,13 @@
 
         $locationProvider.html5Mode( true ).hashPrefix( '!' );
 
-        $httpProvider.interceptors.push( 'AuthInterceptor' );
+        $httpProvider.interceptors.push( 'HttpInterceptor' );
     } ] );
 
     // init app modules
     angular.module( 'gamesApp.controller', [] );
     angular.module( 'gamesApp.service', [] );
     angular.module( 'gamesApp.directive', [] );
+    angular.module( 'gamesApp.filter', [] );
 
 }( angular ) );

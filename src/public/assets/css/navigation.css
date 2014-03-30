@@ -1,0 +1,13 @@
+.navigation {
+    float: left;
+}
+
+.navigation-section {
+    margin: .1em;
+    padding: .8em 1.2em;
+    background-color: #585858;
+    -webkit-border-radius: .4em;
+       -moz-border-radius: .4em;
+            border-radius: .4em;
+    color: #fff;
+}

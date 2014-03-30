@@ -1,0 +1,23 @@
+body {
+    color: #343131;
+    font: 200 100%/1.6em 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    letter-spacing: .06em;
+    background-color: #fff;
+}
+
+p {
+    margin: .6em 0;
+}
+
+:focus {
+    border: 1px dashed #f2f2f2;
+    background-color: #f2f2f2;
+}
+
+.group:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}

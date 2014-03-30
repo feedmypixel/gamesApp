@@ -5,9 +5,9 @@
 
     gamesAppService.factory( 'FlashMessageService', [ '$rootScope', function( $rootScope ){
 
-        var SUCCESS_MESSAGE_TYPE = 'success';
-        var ERROR_MESSAGE_TYPE   = 'error';
-        var INFO_MESSAGE_TYPE    = 'info';
+        var SUCCESS_MESSAGE_TYPE = 'flash-success';
+        var ERROR_MESSAGE_TYPE   = 'flash-error';
+        var INFO_MESSAGE_TYPE    = 'flash-info';
         var message;
 
         var setMessage = function( messageDetail ){

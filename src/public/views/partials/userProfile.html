@@ -1,6 +1,9 @@
 <nav>
-    <li><button ng-click="profileMode = 'edit'">Edit</button></li>
-    <li ng-show="profileMode === 'edit'"><button ng-click="profileMode = 'view'">Done</button></li>
+    <ul>
+        <li class="horizontal-list"><h2><a href="/user" ng-click="profileMode = 'view'">Profile</a></h2></li>
+        <li class="horizontal-list"><a class="icon-font icon-edit font-size-24pt" ng-click="profileMode = 'edit'"></a></li>
+        <li class="horizontal-list" ng-show="profileMode === 'edit'"><a class="icon-font icon-exit font-size-24pt" ng-click="profileMode = 'view'"></a></li>
+    </ul>
 </nav>
 
 <div ng-switch="profileMode">

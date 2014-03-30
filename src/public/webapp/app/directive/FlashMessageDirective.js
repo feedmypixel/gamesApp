@@ -1,7 +1,8 @@
 (function( angular ){
     'use strict';
 
-    var FADEOUT_CLASS_TIMEOUT   = 2000;
+    var FADE_CLASS_NAME         = 'flash-fade';
+    var FADEOUT_CLASS_TIMEOUT   = 4000;
     var gamesAppDirective       = angular.module( 'gamesApp.directive' );
 
     gamesAppDirective.directive( 'flashMessage', [ '$timeout', 'FlashMessageService', function( $timeout, FlashMessageService ){
@@ -14,15 +15,25 @@
 
             link: function( scope, element ){
 
+                var timer;
+
                 scope.$on( 'flash:message', function(){
 
                     scope.flashMessage = FlashMessageService.getMessage();
 
                     if( scope.flashMessage ){
 
-                        $timeout( function(){
+                        var $paragraphElem = element.find( 'p' );
 
-                            element.addClass( 'fade' );
+                        $paragraphElem.removeClass( FADE_CLASS_NAME );
+
+                        if( timer ){
+                            $timeout.cancel( timer );
+                        }
+
+                        timer = $timeout( function(){
+
+                            $paragraphElem.addClass( FADE_CLASS_NAME );
 
                         }, FADEOUT_CLASS_TIMEOUT );
                     }

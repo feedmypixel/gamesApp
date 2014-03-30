@@ -1,0 +1,34 @@
+.flash-message {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    margin-top: 1em;
+    margin-left: -13em;
+    text-align: center;
+    color: #fff;
+    width: 26em;
+    border-radius: .4em;
+    padding: .8em;
+    opacity: 1;
+    font-weight: 200;
+    -webkit-transition: opacity 400ms ease-out;
+       -moz-transition: opacity 400ms ease-out;
+         -o-transition: opacity 400ms ease-out;
+            transition: opacity 400ms ease-out;
+}
+
+.flash-success {
+    background-color: #75ce39;
+}
+
+.flash-error {
+    background-color: #e8523f;
+}
+
+.flash-info {
+    background-color: #398cce;
+}
+
+.flash-fade {
+    opacity: 0;
+}
