@@ -1,6 +1,10 @@
-/* 528px/16px = 33em */
-@media all and (min-width: 33em) {
+/* 365px/16px = 22.813em */
+@media all and (min-width: 22.813em) {
 
+    .form-input,
+    .form-textarea {
+        width: 20em;
+    }
 }
 
 /* 600px/16px = 37.500em */
@@ -21,30 +25,7 @@
         float: right;
     }
 
-    .form-input,
-    .form-textarea {
-        width: 50%;
-    }
-
     .site-title {
         margin-bottom: 1em;
     }
 }
-
-/* 768px/16px = 48em */
-@media all and (min-width: 48em) {
-
-}
-
-/* 960px/16px = 60em */
-@media all and (min-width: 60em) {
-
-}
-
-/* 1280px/16px = 80em */
-@media all and (min-width: 80em) {
-
-}
-
-
-
