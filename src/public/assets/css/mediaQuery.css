@@ -9,6 +9,7 @@
 
 /* 600px/16px = 37.500em */
 @media all and (min-width: 37.5em) {
+
     .content-primary {
         float: left;
     }
@@ -26,6 +27,6 @@
     }
 
     .site-title {
-        margin-bottom: 1em;
+        margin-bottom: .3em;
     }
 }
