@@ -9,10 +9,6 @@ p {
     margin: .6em 0;
 }
 
-:focus {
-    border: 1px dashed #343131;
-}
-
 .group:after {
     content: ".";
     display: block;
