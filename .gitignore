@@ -1,3 +1,4 @@
 node_modules
 src/public/lib/bower-components/
 .idea/
+.DS_Store

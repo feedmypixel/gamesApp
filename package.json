@@ -12,7 +12,11 @@
     "grunt": "^0.4.4",
     "grunt-karma": "^0.8.2",
     "grunt-nodemon": "^0.2.1",
-    "karma-ng-html2js-preprocessor": "^0.1.0"
+    "karma-ng-html2js-preprocessor": "^0.1.0",
+    "karma-cli": "0.0.4",
+    "grunt-cli": "^0.1.13",
+    "node-inspector": "^0.7.2",
+    "nodemon": "^1.0.17"
   },
   "dependencies": {
     "express": "^4.0.0-rc4",
