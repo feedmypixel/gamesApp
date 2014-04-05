@@ -1,0 +1,39 @@
+@-webkit-keyframes throbber-spin {
+    0% {
+        -webkit-transform: rotate( 0 );
+    }
+
+    100% {
+        -webkit-transform: rotate( 360deg );
+    }
+}
+
+@-moz-keyframes throbber-spin {
+    0% {
+        -moz-transform: rotate( 0 );
+    }
+
+    100% {
+        -moz-transform: rotate( 360deg );
+    }
+}
+
+@-o-keyframes throbber-spin {
+    0% {
+        -o-transform: rotate( 0 );
+    }
+
+    100% {
+        -o-transform: rotate( 360deg );
+    }
+}
+
+@keyframes throbber-spin {
+    0% {
+        transform: rotate( 0 );
+    }
+
+    100% {
+        transform: rotate( 360deg );
+    }
+}

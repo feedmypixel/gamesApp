@@ -13,11 +13,14 @@
     var DESCRIPTION_500                 = 'Internal Server Error';
     var gamesAppService                 = angular.module( 'gamesApp.service' );
 
-    gamesAppService.factory( 'HttpInterceptor', [ '$q', '$location', 'FlashMessageService', 'UserService', function( $q, $location, FlashMessageService, UserService ){
+    gamesAppService.factory( 'HttpInterceptor', [ '$q', '$location', 'FlashMessageService', 'UserService', 'HttpStatus',
+        function( $q, $location, FlashMessageService, UserService, HttpStatus ){
 
         return {
 
             request: function( config ){
+
+                HttpStatus.inProgress();
 
                 var sessionToken = UserService.getSessionId();
                 var locationPath = $location.path();
@@ -41,19 +44,24 @@
 
             response: function( response ){
 
+                HttpStatus.finished();
+
                 return response || $q.when( response );
             },
 
 
             requestError: function( rejection ){
 
+                HttpStatus.finished();
+
                 return $q.reject( rejection );
             },
 
             responseError: function( rejection ){
 
-                switch( rejection.status ){
+                HttpStatus.finished();
 
+                switch( rejection.status ){
 
                     case 403:
 
