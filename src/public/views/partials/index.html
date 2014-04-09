@@ -19,7 +19,9 @@
 
 <div ng-if="isLoggedIn" class="content-secondary half-width">
     <h2 class="centered-text">Your Game Titles</h2>
-    <p class="centered-text" ng-hide="userGameTitles">You currently don't have any titles saved with us!</p>
+    <p class="centered-text"
+       ng-hide="userGameTitles"
+       ng-cloak>You currently don't have any titles saved with us!</p>
     <ul>
         <li class="list-detail group" ng-repeat="game in userGameTitles">
             <div class="list-content-primary">

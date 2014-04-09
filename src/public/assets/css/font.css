@@ -68,8 +68,8 @@
 
 .icon-throbber {
     position: fixed;
-    margin: 20% 0 0 47.5%;
-    color: rgba( 57, 140, 206, .4 );
+    margin: 8% 0 0 47.5%;
+    color: #398cce;
     width: 1em;
     height: 1em;
     -webkit-animation: throbber-spin .6s infinite linear;

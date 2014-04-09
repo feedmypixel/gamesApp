@@ -9,7 +9,7 @@
 
             restrict: 'E',
 
-            template: '<div class="font-size-48pt icon-throbber" ng-show="throbber.isInProgress()"></div>',
+            template: '<div class="font-size-30pt icon-throbber" ng-show="throbber.isInProgress()"></div>',
 
             link: function( scope, element, attributes){
 
