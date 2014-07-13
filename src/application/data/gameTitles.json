@@ -1,0 +1,61 @@
+{
+    "games":[
+        {
+            "id": 1,
+            "name": "Minecraft (PS3)",
+            "description": "Discover a world with the freedom to do whatever you want. Dig down into the unknown depths or build incredible structures, from humble homes to grand cityscapes."
+
+        },
+        {
+            "id": 2,
+            "name": "Another World: 20th Anniversary Edition (Xbox)",
+            "description": "Out Of This World places the player in the role of Lester Chaykin, a young nuclear scientist. When an experiment goes badly wrong, Lester finds himself transported to Another World -- a strange, desolate and very alien land."
+
+        },
+        {
+            "id": 3,
+            "name": "EA SPORTS™ 2014 FIFA World Cup Brazil™ (PC)",
+            "description": "Multiple improvements and innovations to the award-winning gameplay of FIFA 14, plus 100 new animations, make EA SPORTS™ 2014 FIFA World Cup Brazil™ the most accessible, fun, and exciting EA SPORTS FIFA title on Xbox 360 and PlayStation 3"
+        },
+        {
+            "id": 4,
+            "name": "Call Of Duty: Ghosts (PS3)",
+            "description": "The franchise that has defined a generation of gaming is set to raise the bar once again with the all-new Call of Duty®: Ghosts. "
+        },
+        {
+            "id": 5,
+            "name": "Battlefield 4 (PC)",
+            "description": "Immerse yourself in the glorious chaos of all-out war. New maps, more vehicles, weapons, and destruction allow you to create your own path and play to your strengths. Absolutely nothing compares to the sheer scale and scope of BF4."
+        },
+        {
+            "id": 6,
+            "name": "Murdered: Soul Suspect (PS3)",
+            "description": "Most people think that death is the end, but for Ronan O’Connor, a Salem police detective with a chequered past, it is just the beginning."
+        },
+        {
+            "id": 7,
+            "name": "Portal 2 - Essentials (PS3)",
+            "description": "Portal 2 draws from the award-winning formula of innovative gameplay, story, and music that earned the original Portal over 70 industry accolades and created a cult following."
+        },
+        {
+            "id": 8,
+            "name": "The Wolf Among Us: Episode 5 -- Cry Wolf Review (PC)",
+            "description": "The Wolf Among Us takes place prior to the comics and lets players take on the role of Bigby Wolf (The Big Bad Wolf), who has been exiled to New York City. The game follows Wolf as he tries to keep fairy tale characters including Mr. Toad and the Three Little Pigs undetected in our world."
+        },
+        {
+            "id": 9,
+            "name": "Sniper Elite 3 (PS3)",
+            "description": "Set in the exotic yet deadly terrain of North Africa during World War Two, Sniper Elite 3 sees American OSS agent Karl Fairburne deep behind Nazi lines, providing crucial sharpshooter skills as the Allies battle Germany’s fearsome Tiger tanks across the Western Desert."
+        },
+        {
+            "id": 10,
+            "name": "WildStar (PC)",
+            "description": "WildStar offers epic high adventure, where players make their mark as Explorers, Soldiers, Scientists or Settlers and lay claim to a mysterious planet on the edge of known space."
+        },
+        {
+            "id": 11,
+            "name": "Dark Souls II (PS3)",
+            "description": "FromSoftware Throws Down the Gauntlet to Gamers Seeking Unparalleled Adventure and Hard Fought Glory."
+        }
+    ]
+}
