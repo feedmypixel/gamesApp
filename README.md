@@ -1,16 +1,26 @@
-# Game Titles API test
+# Game Titles App
 
-Front end made with AngularJS, I have created a simple NodeJS middle end.
+The Game Title App is a play with Angular and a Node server layer.
 
-## To compile project
+## Dependencies
+MongoDB ( running on localhost )
 
-+ Go to project root
-+ $ make install
+## To compile project, from project root
 
+```
+$ make install
+```
 ## To run project
 
-+ $ make run-app
-
+```
+$ make run
+```
 ## To run tests
 
-+ $ make run-tests
+```
+$ make run-tests
+```
+
+## Notes
+
+This is currently a WIP experiment.

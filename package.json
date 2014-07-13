@@ -1,25 +1,33 @@
 {
-  "name": "api_test",
-  "version": "0.0.0",
-  "description": "",
-  "main": "src/public/index.html",
-  "author": "ben@feedmypixel.com",
-  "devDependencies": {
-    "karma": "^0.12.1",
-    "bower": "^1.3.1",
-    "karma-chrome-launcher": "^0.1.2",
-    "karma-jasmine": "^0.1.5",
-    "grunt": "^0.4.4",
-    "grunt-karma": "^0.8.2",
-    "grunt-nodemon": "^0.2.1",
-    "karma-ng-html2js-preprocessor": "^0.1.0",
-    "karma-cli": "0.0.4",
-    "grunt-cli": "^0.1.13",
-    "node-inspector": "^0.7.2",
-    "nodemon": "^1.0.17"
-  },
-  "dependencies": {
-    "express": "^4.0.0-rc4",
-    "morgan": "^1.0.0"
-  }
+    "name": "game_title_app",
+    "version": "0.0.0",
+    "description": "The Game Title App is a play with Angular and a Node server layer",
+    "main": "src/public/index.html",
+    "author": "ben@feedmypixel.com",
+    "devDependencies": {
+        "karma": "^0.12.1",
+        "bower": "^1.3.1",
+        "karma-chrome-launcher": "^0.1.2",
+        "karma-jasmine": "^0.1.5",
+        "grunt": "^0.4.4",
+        "grunt-karma": "^0.8.2",
+        "grunt-nodemon": "^0.2.1",
+        "karma-ng-html2js-preprocessor": "^0.1.0",
+        "karma-cli": "0.0.4",
+        "grunt-cli": "^0.1.13",
+        "node-inspector": "^0.7.2",
+        "nodemon": "^1.0.17"
+    },
+    "dependencies": {
+        "express": "^4.0.0-rc4",
+        "morgan": "^1.0.0",
+        "passport": "^0.2.0",
+        "passport-local": "^1.0.0",
+        "bcrypt-nodejs": "0.0.3",
+        "mongoose": "^3.8.12",
+        "cookie-parser": "^1.3.2",
+        "cookie-session": "^1.0.2",
+        "method-override": "^2.1.0",
+        "body-parser": "^1.4.3"
+    }
 }

@@ -1,25 +1,18 @@
 (function( angular ){
     'use strict';
 
-    var DELETED_STATUS_FLAG                 = 'deleted';
-    var GAME_TITLE_DELETED_SUCCESS_MESSAGE  = 'That game have been removed';
-    var ADDED_STATUS_FLAG                   = 'added';
-    var GAME_TITLE_ADDED_SUCCESS_MESSAGE    = 'That game have been added';
-    var gamesAppController                  = angular.module( 'gamesApp.controller' );
+    var indexController = angular.module( 'gamesApp.indexController', [] );
 
-    var IndexController = function( $scope, UserService, ApiService, FlashMessageService ){
+    var IndexController = function( $scope, UserService, ApiService ){
 
         this.$scope = $scope;
         this.$scope.isLoggedIn = UserService.isLoggedIn();
         this._ApiService = ApiService;
-        this._FlashMessageService = FlashMessageService
-        this._userId = UserService.getUserId();
 
         this.$scope.addTitleToUserList = this._addTitleToUsersGameList.bind( this );
         this.$scope.removeTitleFromUserList = this._removeTitleFromUsersGameList.bind( this );
 
         this._processGameTitleLists.call( this );
-
     }
 
     IndexController.prototype._processGameTitleLists = function(){
@@ -35,7 +28,7 @@
 
             if( this.$scope.isLoggedIn ){
 
-                var userGameTitlesPromise = this._ApiService.getUserTitles( { userId: this._userId } ).$promise;
+                var userGameTitlesPromise = this._ApiService.getUserGameTitles().$promise;
 
                 userGameTitlesPromise.then( function( response ){
 
@@ -79,45 +72,24 @@
             return;
         }
 
-        var data = {
-
-            status: ADDED_STATUS_FLAG,
-
-            userId: this._userId,
-
-            titleId: gameTitleId
-
-        };
-
-        this._ApiService.addUserTitle( data ).$promise.then( function(){
+        this._ApiService.addUserTitle( { id: gameTitleId } ).$promise.then( function(){
 
             this._processGameTitleLists();
-            this._FlashMessageService.setSuccessMessage( GAME_TITLE_ADDED_SUCCESS_MESSAGE );
 
         }.bind( this ) );
     };
 
     IndexController.prototype._removeTitleFromUsersGameList = function( gameTitleId ){
 
-        var data = {
-
-            status: DELETED_STATUS_FLAG,
-
-            userId: this._userId,
-
-            titleId: gameTitleId
-        };
-
-        this._ApiService.deleteUserTitle( data ).$promise.then( function(){
+        this._ApiService.deleteUserTitle( { id: gameTitleId } ).$promise.then( function(){
 
             this._processGameTitleLists();
-            this._FlashMessageService.setSuccessMessage( GAME_TITLE_DELETED_SUCCESS_MESSAGE );
 
         }.bind( this ) );
     };
 
-    IndexController.$inject = [ '$scope', 'UserService', 'ApiService', 'FlashMessageService' ];
+    IndexController.$inject = [ '$scope', 'UserService', 'ApiService' ];
 
-    gamesAppController.controller( 'IndexController', IndexController );
+    indexController.controller( 'IndexController', IndexController );
 
 }( angular ));

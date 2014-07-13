@@ -1,7 +1,7 @@
 (function( angular ){
     'use strict';
 
-    var gamesAppController = angular.module( 'gamesApp.controller' );
+    var navigationController = angular.module( 'gamesApp.navigationController', [] );
 
     var NavigationController = function( $scope, UserService ){
 
@@ -10,6 +10,6 @@
 
     NavigationController.$inject = [ '$scope', 'UserService' ];
 
-    gamesAppController.controller( 'NavigationController', NavigationController );
+    navigationController.controller( 'NavigationController', NavigationController );
 
 }( angular ) );

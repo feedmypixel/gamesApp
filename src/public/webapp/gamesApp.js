@@ -1,20 +1,30 @@
 (function( angular ){
     'use strict';
 
-    var INDEX_PAGE_URL               = '/';
-    var SIGNOUT_SUCCESS_MESSAGE = 'Bye bye!';
-    var gamesApp                = angular.module( 'gamesApp', [
+    var gamesApp = angular.module( 'gamesApp', [
 
         'ngRoute',
         'ngResource',
-        'gamesApp.service',
-        'gamesApp.directive',
-        'gamesApp.controller',
-        'gamesApp.filter'
+        'gamesApp.flashMessageDirective',
+        'gamesApp.showPasswordDirective',
+        'gamesApp.throbberDirective',
+        'gamesApp.camelCaseToUppercaseWordsFilter',
+        'gamesApp.preserveObjectOrderFilter',
+        'gamesApp.httpInterceptor',
+        'gamesApp.flashMessageService',
+        'gamesApp.httpStatusService',
+        'gamesApp.userService',
+        'gamesApp.indexController',
+        'gamesApp.navigationController',
+        'gamesApp.registerController',
+        'gamesApp.signinController',
+        'gamesApp.userController',
+        'gamesApp.apiService'
 
     ] );
 
-    gamesApp.config( [ '$httpProvider', '$routeProvider', '$locationProvider', function( $httpProvider, $routeProvider, $locationProvider ){
+    gamesApp.config( [ '$httpProvider', '$routeProvider', '$locationProvider',
+        function( $httpProvider, $routeProvider, $locationProvider ){
 
         $routeProvider.when( '/', {
 
@@ -38,13 +48,14 @@
 
         } ).when( '/signout', {
 
-            resolve: { load: [ '$location', 'UserService', 'FlashMessageService', function( $location, UserService, FlashMessageService ){
+            resolve: { load: [ '$location', 'UserService', 'FlashMessageService', 'ApiService',
+                function( $location, UserService, FlashMessageService, ApiService ){
 
-                UserService.logout();
-                FlashMessageService.setSuccessMessage( SIGNOUT_SUCCESS_MESSAGE );
-                $location.path( INDEX_PAGE_URL );
-
-            } ] }
+                    ApiService.logoutUser().$promise.then(function(){
+                        UserService.logout();
+                    } );
+                }
+            ] }
 
         } ).otherwise( { redirectTo: '/' } );
 
@@ -52,11 +63,5 @@
 
         $httpProvider.interceptors.push( 'HttpInterceptor' );
     } ] );
-
-    // init app modules
-    angular.module( 'gamesApp.controller', [] );
-    angular.module( 'gamesApp.service', [] );
-    angular.module( 'gamesApp.directive', [] );
-    angular.module( 'gamesApp.filter', [] );
 
 }( angular ) );

@@ -29,7 +29,7 @@ module.exports = function( grunt ){
 
                     env: {
 
-                        PORT: '8181'
+                        PORT: '8090'
                     },
 
                     cwd: __dirname,
@@ -38,7 +38,7 @@ module.exports = function( grunt ){
 
                     ext: 'js',
 
-                    watch: [ 'server' ],
+                    watch: [ 'src/application' ],
 
                     delay: 1,
 
