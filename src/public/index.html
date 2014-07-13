@@ -14,23 +14,21 @@
     <meta name="distribution" content="global"/>
     <meta http-equiv="imagetoolbar" content="no"/>
 
-    <title>Games Title App</title>
+    <title>Game Chooser App</title>
 
-    <!-- would concatenate, minify and rev with Grunt for production -->
+    <!-- //TODO concatenate, minify and rev with Grunt for production -->
     <link rel="stylesheet" href="/assets/css/normalize.css"/>
     <link rel="stylesheet" href="/assets/css/base.css"/>
     <link rel="stylesheet" href="/assets/css/animation.css"/>
     <link rel="stylesheet" href="/assets/css/navigation.css"/>
     <link rel="stylesheet" href="/assets/css/button.css"/>
     <link rel="stylesheet" href="/assets/css/flashMessage.css"/>
-    <link rel="stylesheet" href="/assets/css/colour.css"/>
     <link rel="stylesheet" href="/assets/css/font.css"/>
     <link rel="stylesheet" href="/assets/css/form.css"/>
     <link rel="stylesheet" href="/assets/css/layout.css"/>
     <link rel="stylesheet" href="/assets/css/link.css"/>
     <link rel="stylesheet" href="/assets/css/type.css"/>
     <link rel="stylesheet" href="/assets/css/list.css"/>
-    <link rel="stylesheet" href="/assets/css/throbber.css"/>
     <link rel="stylesheet" href="/assets/css/mediaQuery.css"/>
 </head>
 <body ng-app="gamesApp">
@@ -62,28 +60,28 @@
 
     </div>
 
-    <!-- would concatenate, minify and rev with Grunt for production -->
+    <!-- //TODO concatenate, minify and rev with Grunt for production -->
     <script type="text/javascript" src="/lib/bower-components/angular/angular.js"></script>
     <script type="text/javascript" src="/lib/bower-components/angular-resource/angular-resource.js"></script>
     <script type="text/javascript" src="/lib/bower-components/angular-route/angular-route.js"></script>
 
     <script type="text/javascript" src="/webapp/gamesApp.js"></script>
-    <script type="text/javascript" src="/webapp/index/IndexController.js"></script>
-    <script type="text/javascript" src="/webapp/signin/SigninController.js"></script>
-    <script type="text/javascript" src="/webapp/navigation/NavigationController.js"></script>
-    <script type="text/javascript" src="/webapp/user/UserController.js"></script>
-    <script type="text/javascript" src="/webapp/register/RegisterController.js"></script>
+    <script type="text/javascript" src="/webapp/index/Index.controller.js"></script>
+    <script type="text/javascript" src="/webapp/signin/Signin.controller.js"></script>
+    <script type="text/javascript" src="/webapp/navigation/Navigation.controller.js"></script>
+    <script type="text/javascript" src="/webapp/user/User.controller.js"></script>
+    <script type="text/javascript" src="/webapp/register/Register.controller.js"></script>
 
-    <script type="text/javascript" src="/webapp/app/directive/ShowPasswordDirective.js"></script>
-    <script type="text/javascript" src="/webapp/app/directive/FlashMessageDirective.js"></script>
-    <script type="text/javascript" src="/webapp/app/directive/ThrobberDirective.js"></script>
-    <script type="text/javascript" src="/webapp/app/interceptor/HttpInterceptor.js"></script>
-    <script type="text/javascript" src="/webapp/app/service/FlashMessageService.js"></script>
-    <script type="text/javascript" src="/webapp/app/service/UserService.js"></script>
-    <script type="text/javascript" src="/webapp/app/service/HttpStatusService.js"></script>
+    <script type="text/javascript" src="/webapp/app/directive/ShowPassword.directive.js"></script>
+    <script type="text/javascript" src="/webapp/app/directive/FlashMessage.directive.js"></script>
+    <script type="text/javascript" src="/webapp/app/directive/Throbber.directive.js"></script>
+    <script type="text/javascript" src="/webapp/app/interceptor/Http.interceptor.js"></script>
+    <script type="text/javascript" src="/webapp/app/service/FlashMessage.service.js"></script>
+    <script type="text/javascript" src="/webapp/app/service/User.service.js"></script>
+    <script type="text/javascript" src="/webapp/app/service/HttpStatus.service.js"></script>
+    <script type="text/javascript" src="/webapp/api/Api.service.js"></script>
 
-    <script type="text/javascript" src="/webapp/app/filter/CamelCaseToUppercaseWordsFilter.js"></script>
-
-    <script type="text/javascript" src="/webapp/api/ApiService.js"></script>
+    <script type="text/javascript" src="/webapp/app/filter/CamelCaseToUppercaseWords.filter.js"></script>
+    <script type="text/javascript" src="/webapp/app/filter/PreserveObjectOrder.filter.js"></script>
 </body>
 </html>
