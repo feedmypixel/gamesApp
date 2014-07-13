@@ -1,10 +1,10 @@
 {
-  "name": "api_test",
+  "name": "Game title app",
   "version": "0.0.0",
   "authors": [
     "Ben Chidgey <ben@feedmypixel.com>"
   ],
-  "description": "api test for Sony",
+  "description": "The Game Title App is a play with Angular and a Node server layer",
   "main": "public/index.html",
   "license": "MIT",
   "ignore": [

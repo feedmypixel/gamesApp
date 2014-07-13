@@ -2,9 +2,9 @@
     'use strict';
 
     var PASSWORD_INPUT_TYPE = 'password';
-    var gamesAppDirective = angular.module( 'gamesApp.directive' );
+    var showPasswordDirective = angular.module( 'gamesApp.showPasswordDirective', [] );
 
-    gamesAppDirective.directive( 'showPassword', function(){
+    showPasswordDirective.directive( 'showPassword', function(){
 
         return {
 

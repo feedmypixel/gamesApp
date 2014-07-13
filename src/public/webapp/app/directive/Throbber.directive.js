@@ -1,9 +1,9 @@
 (function( angular ){
     'use strict';
 
-    var gamesAppDirective = angular.module( 'gamesApp.directive' );
+    var throbberDirective = angular.module( 'gamesApp.throbberDirective', [] );
 
-    gamesAppDirective.directive( 'throbber', [ 'HttpStatus', function( HttpStatus ){
+    throbberDirective.directive( 'throbber', [ 'HttpStatus', function( HttpStatus ){
 
         return {
 

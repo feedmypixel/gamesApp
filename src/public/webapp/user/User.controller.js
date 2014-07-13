@@ -5,31 +5,27 @@
     var GENDER_FEMALE               = 'female';
     var EDIT_PROFILE_SECTION_NAME   = 'edit';
     var VIEW_PROFILE_SECTION_NAME   = 'view';
-    var FORM_SUBMIT_SUCCESS_MESSAGE = 'Your details have been saved';
-    var gamesAppController          = angular.module( 'gamesApp.controller' );
+    var userController             = angular.module( 'gamesApp.userController', [] );
 
-    var UserController = function( $scope, $location, UserService, ApiService, FlashMessageService ){
+    var UserController = function( $scope, $filter, UserService, ApiService ){
 
         this.$scope = $scope;
-        this._$location = $location;
+        this._$filter = $filter;
         this._ApiService = ApiService;
-        this._FlashMessageService = FlashMessageService
-        this._userId = UserService.getUserId();
 
         this.$scope.profileMode = VIEW_PROFILE_SECTION_NAME;
         this.$scope.submitForm = this._submitForm.bind( this );
 
         this._getUserDetail.call( this );
-
     };
 
     UserController.prototype._getUserDetail = function(){
 
-        this._ApiService.getUserDetail( { userId: this._userId } ).$promise.then( function( response ){
+        this._ApiService.getUserDetail().$promise.then( function( response ){
 
             this.$scope.profileMode = 'view';
 
-            this.$scope.formData = this._createFormData( response );
+            this.$scope.formData = this._createFormData( response.user );
 
             this.$scope.userData = this._createUserData( this.$scope.formData );
 
@@ -38,10 +34,11 @@
         }.bind( this ), function( err ){} );
     };
 
-    UserController.prototype._createUserData = function( response ){
+    UserController.prototype._createUserData = function( user ){
 
         //manipulate form data for viewing
-        var userData = this._createFormData( response );
+        var userData = this._createFormData( user );
+
         var genderIsFemale = userData.genderIsFemale;
 
         delete userData.password;
@@ -50,7 +47,7 @@
 
         userData.gender = genderIsFemale ? GENDER_FEMALE : GENDER_MALE;
 
-        return userData;
+        return this._$filter('preserveObjectOrder')( userData );
     };
 
     UserController.prototype._submitForm = function(){
@@ -61,33 +58,28 @@
 
             this.$scope.userData = this._createUserData( this.$scope.formData );
 
-            this._FlashMessageService.setSuccessMessage( FORM_SUBMIT_SUCCESS_MESSAGE );
+            this.$scope.profileMode = 'view';
 
         }.bind( this ) );
     };
 
-    UserController.prototype._createFormData = function( response ){
+    UserController.prototype._createFormData = function( user ){
 
         return {
 
-            firstName: response.firstName && response.firstName,
+            firstName: user.firstName && user.firstName,
 
-            lastName: response.lastName && response.lastName,
+            lastName: user.lastName && user.lastName,
 
-            phoneNumber: response.phoneNumber && response.phoneNumber,
+            gender: null,
 
-            username: response.username && response.username,
+            genderIsFemale: !!user.genderIsFemale,
 
-            password: response.password && response.password,
+            age: user.age && user.age,
 
-            notes: response.notes && response.notes,
+            phoneNumber: user.phoneNumber && user.phoneNumber,
 
-            genderIsFemale: response.genderIsFemale,
-
-            age: response.age && response.age,
-
-            userId: response.userId
-
+            notes: user.notes && user.notes,
         };
     };
 
@@ -100,8 +92,8 @@
         return ageRange;
     }
 
-    UserController.$inject = [ '$scope', '$location', 'UserService', 'ApiService', 'FlashMessageService' ];
+    UserController.$inject = [ '$scope', '$filter', 'UserService', 'ApiService' ];
 
-    gamesAppController.controller( 'UserController', UserController );
+    userController.controller( 'UserController', UserController );
 
 }( angular ) );

@@ -3,9 +3,9 @@
 
     var FADE_CLASS_NAME         = 'flash-fade';
     var FADEOUT_CLASS_TIMEOUT   = 4000;
-    var gamesAppDirective       = angular.module( 'gamesApp.directive' );
+    var flashMessageDirective = angular.module( 'gamesApp.flashMessageDirective', [] );
 
-    gamesAppDirective.directive( 'flashMessage', [ '$timeout', 'FlashMessageService', function( $timeout, FlashMessageService ){
+    flashMessageDirective.directive( 'flashMessage', [ '$timeout', 'FlashMessageService', function( $timeout, FlashMessageService ){
 
         return {
 

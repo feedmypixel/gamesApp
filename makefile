@@ -6,7 +6,7 @@ bower-install:
 
 install: npm-install bower-install
 
-run-app:
+run:
 	grunt run-application
 
 run-tests:

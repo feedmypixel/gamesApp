@@ -1,8 +1,14 @@
 <nav>
-    <ul>
+    <ul class="horizontal-list">
         <li class="horizontal-list"><h2><a href="/user" ng-click="profileMode = 'view'">Profile</a></h2></li>
-        <li class="horizontal-list"><a class="icon-font icon-edit font-size-24pt" ng-click="profileMode = 'edit'"></a></li>
-        <li class="horizontal-list" ng-show="profileMode === 'edit'"><a class="icon-font icon-exit font-size-24pt" ng-click="profileMode = 'view'"></a></li>
+    </ul>
+    <ul class="horizontal-list list-separate">
+        <li class="horizontal-list" ng-show="profileMode === 'view'">
+            <a class="font-size-12pt" ng-click="profileMode = 'edit'">edit</a>
+        </li>
+        <li class="horizontal-list " ng-show="profileMode === 'edit'">
+            <a class="font-size-12pt" ng-click="profileMode = 'view'">back</a>
+        </li>
     </ul>
 </nav>
 

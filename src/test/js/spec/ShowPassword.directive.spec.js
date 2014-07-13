@@ -8,7 +8,7 @@ describe( 'Show Password Directive Tests', function(){
 
     beforeEach( function(){
 
-        module( 'gamesApp.directive' );
+        module( 'gamesApp.showPasswordDirective' );
         module( '/views/templates/ShowPasswordTemplate.html' );
 
     } );

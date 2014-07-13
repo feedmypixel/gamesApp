@@ -47,83 +47,8 @@
                     <span class="error-text">Please enter your last name</span>
                     <span class="icon-font icon-info font-size-24pt"></span><span class="info-text">It's got to be 3 - 20 characters</span>
                 </div>
-            </div>            
+            </div>
         </div>
-
-        <div>
-            <label for="phonenumber">
-                <span class="icon-required font-size-11pt"></span>Phone Number:
-                <input type="tel"
-                       class="form-input"
-                       name="phonenumber"
-                       id="phonenumber"
-                       placeholder="Enter your phone number"
-                       required
-                       ng-class="{ error: userForm.phonenumber.$invalid && ( userForm.phonenumber.blurred || form.submitted ) }"
-                       ng-model="formData.phoneNumber"
-                       ng-blur="userForm.phonenumber.blurred = true"
-                       ng-pattern="/\d{11}/"/>
-            </label>
-
-            <div class="error-container">
-                <div class="font-size-11pt" ng-show="userForm.phonenumber.$invalid && ( userForm.phonenumber.blurred || form.submitted )">
-                    <span class="error-text">Please enter your phone number</span>
-                    <span class="icon-font icon-info font-size-24pt"></span><span class="info-text">It's got to be 11 characters</span>
-                </div>
-            </div>            
-        </div>
-
-    </fieldset>
-    <fieldset>
-
-        <div>
-            <label for="username">
-                <span class="icon-required font-size-11pt"></span>User Name:
-                <input type="text"
-                       class="form-input"
-                       name="username"
-                       id="username"
-                       placeholder="Enter your User Name"
-                       required
-                       ng-class="{ error: userForm.username.$invalid && ( userForm.username.blurred || form.submitted ) }"
-                       ng-model="formData.username"
-                       ng-blur="userForm.username.blurred = true"
-                       ng-minlength="3"
-                       ng-maxlength="20"/>
-            </label>
-
-            <div class="error-container">
-                <div class="font-size-11pt" ng-show="userForm.username.$invalid && ( userForm.username.blurred || form.submitted )">
-                    <span class="error-text">Please enter a user name</span>
-                    <span class="icon-font icon-info font-size-24pt"></span><span class="info-text">It's got to be 3 - 20 characters</span>
-                </div>
-            </div>            
-        </div>
-
-        <div>
-            <label for="password">
-                <span class="icon-required font-size-11pt"></span>Password:
-                <input type="{{ passwordInputType }}"
-                       class="form-input"
-                       name="password"
-                       id="password"
-                       placeholder="Enter your Password"
-                       required
-                       ng-class="{ error: userForm.password.$invalid && ( userForm.password.blurred || form.submitted ) }"
-                       ng-model="formData.password"
-                       ng-blur="userForm.password.blurred = true"/>
-            </label>
-
-             <show-password password-input-type="passwordInputType"></show-password>
-
-            <div class="error-container">
-                <div class="font-size-11pt" ng-show="userForm.password.$invalid && ( userForm.password.blurred || form.submitted )">
-                    <span class="error-text">Please enter a password</span>
-                    <span class="icon-font icon-info font-size-24pt"></span><span class="info-text">Make it a good one!</span>
-                </div>
-            </div>            
-        </div>
-
 
         <div class="form-section">
             <span class="icon-required font-size-11pt"></span>Gender:
@@ -163,6 +88,32 @@
                     <option value="">-- Choose Your Age --</option>
                 </select>
             </label>
+        </div>
+
+    </fieldset>
+    <fieldset>
+
+        <div>
+            <label for="phonenumber">
+                <span class="icon-required font-size-11pt"></span>Phone Number:
+                <input type="tel"
+                       class="form-input"
+                       name="phonenumber"
+                       id="phonenumber"
+                       placeholder="Enter your phone number"
+                       required
+                       ng-class="{ error: userForm.phonenumber.$invalid && ( userForm.phonenumber.blurred || form.submitted ) }"
+                       ng-model="formData.phoneNumber"
+                       ng-blur="userForm.phonenumber.blurred = true"
+                       ng-pattern="/\d{11}/"/>
+            </label>
+
+            <div class="error-container">
+                <div class="font-size-11pt" ng-show="userForm.phonenumber.$invalid && ( userForm.phonenumber.blurred || form.submitted )">
+                    <span class="error-text">Please enter your phone number</span>
+                    <span class="icon-font icon-info font-size-24pt"></span><span class="info-text">It's got to be 11 characters</span>
+                </div>
+            </div>
         </div>
 
         <div class="form-section">

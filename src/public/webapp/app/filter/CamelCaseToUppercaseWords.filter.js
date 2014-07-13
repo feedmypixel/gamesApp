@@ -1,9 +1,9 @@
 (function( angular ){
     'use strict';
 
-    var gamesAppFilter = angular.module( 'gamesApp.filter' );
+    var camelCaseToUppercaseWordsFilter = angular.module( 'gamesApp.camelCaseToUppercaseWordsFilter', [] );
 
-    gamesAppFilter.filter( 'camelCaseToUppercaseWords', function(){
+    camelCaseToUppercaseWordsFilter.filter( 'camelCaseToUppercaseWords', function(){
 
         return function( string ){
 

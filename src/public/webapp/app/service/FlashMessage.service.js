@@ -1,9 +1,9 @@
 (function( angular ){
     'use strict';
 
-    var gamesAppService = angular.module( 'gamesApp.service' );
+    var flashMessageService = angular.module( 'gamesApp.flashMessageService', [] );
 
-    gamesAppService.factory( 'FlashMessageService', [ '$rootScope', function( $rootScope ){
+    flashMessageService.factory( 'FlashMessageService', [ '$rootScope', function( $rootScope ){
 
         var SUCCESS_MESSAGE_TYPE = 'flash-success';
         var ERROR_MESSAGE_TYPE   = 'flash-error';
@@ -21,17 +21,26 @@
 
             setSuccessMessage: function( message ){
 
-                setMessage( { type: SUCCESS_MESSAGE_TYPE, msg: message } );
+                if( message ){
+
+                    setMessage( { type: SUCCESS_MESSAGE_TYPE, msg: message } );
+                }
             },
 
             setErrorMessage: function( message ){
 
-                setMessage( { type: ERROR_MESSAGE_TYPE, msg: message } );
+                if( message ){
+
+                    setMessage( { type: ERROR_MESSAGE_TYPE, msg: message } );
+                }
             },
 
             setInformationMessage: function( message ){
 
-                setMessage( { type: INFO_MESSAGE_TYPE, msg: message } );
+                if( message ) {
+
+                    setMessage( { type: INFO_MESSAGE_TYPE, msg: message } );
+                }
             },
 
             getMessage: function(){

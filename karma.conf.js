@@ -21,20 +21,28 @@ module.exports = function( config ){
             'src/public/lib/bower-components/angular-resource/angular-resource.js',
 
             'src/public/webapp/gamesApp.js',
-            'src/public/webapp/index/IndexController.js',
-            'src/public/webapp/signin/SigninController.js',
-            'src/public/webapp/navigation/NavigationController.js',
-            'src/public/webapp/user/UserController.js',
-            'src/public/webapp/register/RegisterController.js',
-            'src/public/webapp/app/directive/ShowPasswordDirective.js',
-            'src/public/webapp/app/directive/FlashMessageDirective.js',
-            'src/public/webapp/app/interceptor/HttpInterceptor.js',
-            'src/public/webapp/app/service/FlashMessageService.js',
-            'src/public/webapp/app/service/UserService.js',
-            'src/public/webapp/app/filter/CamelCaseToUppercaseWordsFilter.js',
-            'src/public/webapp/api/ApiService.js',
 
-            'src/test/js/spec/*Spec.js',
+            'src/public/webapp/index/Index.controller.js',
+            'src/public/webapp/signin/Signin.controller.js',
+            'src/public/webapp/navigation/Navigation.controller.js',
+            'src/public/webapp/user/User.controller.js',
+            'src/public/webapp/register/Register.controller.js',
+
+            'src/public/webapp/app/directive/ShowPassword.directive.js',
+            'src/public/webapp/app/directive/FlashMessage.directive.js',
+            'src/public/webapp/app/directive/Throbber.directive.js',
+
+            'src/public/webapp/app/interceptor/Http.interceptor.js',
+
+            'src/public/webapp/app/service/FlashMessage.service.js',
+            'src/public/webapp/app/service/User.service.js',
+            'src/public/webapp/app/service/HttpStatus.service.js',
+            'src/public/webapp/api/Api.service.js',
+
+            'src/public/webapp/app/filter/CamelCaseToUppercaseWords.filter.js',
+            'src/public/webapp/app/filter/PreserveObjectOrder.filter.js',
+
+            'src/test/js/spec/*.spec.js',
 
             'src/public/views/templates/*.html'
         ],

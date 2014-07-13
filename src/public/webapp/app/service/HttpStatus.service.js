@@ -1,9 +1,9 @@
 (function( angular ){
     'use strict';
 
-    var gamesAppService = angular.module( 'gamesApp.service' );
+    var httpStatusService = angular.module( 'gamesApp.httpStatusService', [] );
 
-    gamesAppService.factory( 'HttpStatus', function(){
+    httpStatusService.factory( 'HttpStatus', function(){
 
         var BOOLEAN_FALSE = false;
         var BOOLEAN_TRUE = true;
