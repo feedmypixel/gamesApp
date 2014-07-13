@@ -10,12 +10,10 @@
 }
 
 .icon-throbber,
-.icon-exit,
 .icon-info,
 .icon-required,
 .icon-add,
-.icon-delete,
-.icon-edit {
+.icon-delete {
     font-family: 'gamesApp';
     speak: none;
     font-style: normal;
@@ -60,15 +58,9 @@
     margin: 0 .1em 0 .4em;
 }
 
-.icon-exit,
-.icon-edit {
-    margin-left: .4em;
-    color: #585858;
-}
-
 .icon-throbber {
     position: fixed;
-    margin: 8% 0 0 47.5%;
+    margin: 5% 0 0 47.5%;
     color: #398cce;
     width: 1em;
     height: 1em;
@@ -80,10 +72,6 @@
 
 .icon-throbber:before {
     content: "\e001";
-}
-
-.icon-exit:before {
-    content: "\e602";
 }
 
 .icon-info:before {
@@ -100,8 +88,4 @@
 
 .icon-delete:before {
     content: "\e601";
-}
-
-.icon-edit:before {
-    content: "\f040";
 }
